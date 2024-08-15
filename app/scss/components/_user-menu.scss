@@ -3,10 +3,11 @@
   gap: 5px;
 
   &__btn {
-    @extend %flec-cc;
+    @extend %flex-cc;
     width: 44px;
     height: 44px;
     border-radius: 5px;
+    position: relative;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 
     &:focus {
@@ -17,17 +18,39 @@
     &:hover {
       background-color: $accent;
 
-      .user-ico {
-        fill: $white;
+      @include mq('tablet-3') {
+        background-color: transparent;
       }
 
+      .user-ico {
+        fill: $white;
+
+        @include mq('tablet-3') {
+          fill: #000;
+        }
+      }
+      
       .heart-ico {
         stroke: $white;
+
+        @include mq('tablet-3') {
+          stroke: $default;
+        }
+      }
+
+      .user-menu__circle {
+        background-color: $white;
+        color: $accent;
+
+        @include mq('tablet-3') {
+          background-color: $accent;
+          color: $white;
+        }
       }
     }
 
     &:active {
-      background-color: rgba($sand, 0.70);
+      background-color: rgba($sand, 0.50);
       box-shadow: none;
 
       .user-ico {
@@ -37,6 +60,27 @@
       .heart-ico {
         stroke: $default;
       }
+
+      .user-menu__circle {
+        background-color: $accent;
+        color: $white;
+      }
     }
+  }
+
+  &__circle {
+    @extend %flex-cc;
+    @extend %sf-medium;
+    font-size: 10px;
+    line-height: 1.2;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: $white;
+    background-color: $accent;
+    position: absolute;
+    right: 3px;
+    bottom: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 }

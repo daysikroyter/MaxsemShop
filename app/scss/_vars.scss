@@ -3,6 +3,7 @@ $accent: #C8A06C;
 $white: #fff;
 $black: #000;
 $sand: rgb(225, 184, 131);
+$silver: rgb(202, 202, 202);
 
 $breakpoints: (
   "phone-s": 321px,
@@ -58,8 +59,12 @@ $breakpoints: (
   align-items: center;
 }
 
-%flec-cc {
+%flex-cc {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+%flex-sb {
+  display: flex;
+  justify-content: space-between;
 }
