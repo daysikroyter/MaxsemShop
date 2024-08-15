@@ -6,7 +6,6 @@ const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean');
-const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
@@ -38,10 +37,7 @@ function fonts() {
 }
 
 function images() {
-  return src(['app/images/src/*.*', '!app/images/src/*.svg'])
-    .pipe(newer('app/images'))
-    .pipe(avif({ quality: 50 }))
-    
+  return src(['app/images/src/*.*', '!app/images/src/*.svg'])    
     .pipe(src('app/images/src/*.*'))
     .pipe(newer('app/images'))
     .pipe(webp())
@@ -54,7 +50,7 @@ function images() {
 }
 
 function svgSprites() {
-  return src('app/images/*.svg')
+  return src('app/images/icons/*.svg')
     .pipe(cheerio({
       run: ($) => {
         $("[fill]").removeAttr("fill");
@@ -74,7 +70,7 @@ function svgSprites() {
         },
       })
     )
-    .pipe(dest('app/images/sprite'));
+    .pipe(dest('app/images/icons/sprite'));
 }
 
 function styles() {
@@ -106,10 +102,10 @@ function watching() {
     notify: false
   });
   watch(['app/scss/**/*.scss'], styles);
+  watch(['app/images/icons/*.svg'], svgSprites);
   watch(['app/images/src'], images);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
-  watch(['app/images/dist/*.svg'], svgSprites);
   watch(['app/html/**/*.html'], htmlInclude);
 }
 

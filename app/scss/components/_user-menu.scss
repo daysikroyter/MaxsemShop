@@ -1,0 +1,42 @@
+.user-menu {
+  display: flex;
+  gap: 5px;
+
+  &__btn {
+    @extend %flec-cc;
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+
+    &:focus {
+      background-color: rgba($black, .1);
+      box-shadow: 0 0 0 2px rgba($accent, 0.70);
+    }
+
+    &:hover {
+      background-color: $accent;
+
+      .user-ico {
+        fill: $white;
+      }
+
+      .heart-ico {
+        stroke: $white;
+      }
+    }
+
+    &:active {
+      background-color: rgba($sand, 0.70);
+      box-shadow: none;
+
+      .user-ico {
+        fill: $default;
+      }
+
+      .heart-ico {
+        stroke: $default;
+      }
+    }
+  }
+}

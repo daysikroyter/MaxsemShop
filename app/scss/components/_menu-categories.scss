@@ -1,0 +1,27 @@
+.menu-categories {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+
+  &__link {
+    padding: 15px 0;
+  }
+
+  &__link--sale {
+
+    &::after {
+      @extend %pseudo;
+      top: -8px;
+      right: -38px;
+      width: 39px;
+      height: 44px;
+      background: url('../images/sprite-sale.webp') -223px 0 no-repeat;
+      transform: rotate(31deg);
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::after {
+      transform: rotate(31deg) scale(1.1);
+    }
+  }
+}

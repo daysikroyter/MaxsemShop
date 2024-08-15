@@ -1,0 +1,65 @@
+$default: #2F3035;
+$accent: #C8A06C;
+$white: #fff;
+$black: #000;
+$sand: rgb(225, 184, 131);
+
+$breakpoints: (
+  "phone-s": 321px,
+  "phone-m": 366px,
+  "phone": 376px,
+  "phone-2": 481px,
+  "phone-3": 561px,
+  "tablet": 769px,
+  "tablet-2": 891px,
+  "tablet-3": 993px,
+  "desktop": 1050px,
+  "large-desktop": 1100px,
+  "mobile-height-l": 788px,
+  "mobile-height": 576px,
+  "mobile-height-2": 440px
+);
+
+%sf-regular {
+  font-family: 'SFProDisplay-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%sf-medium {
+  font-family: 'SFProDisplay-Regular', sans-serif;
+  font-weight: 500;
+}
+
+%sf-semibold {
+  font-family: 'SFProDisplay-Regular', sans-serif;
+  font-weight: 600;
+}
+
+%sf-bold {
+  font-family: 'SFProDisplay-Regular', sans-serif;
+  font-weight: 700;
+}
+
+%pseudo {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+%bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+%flex-sbc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flec-cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
