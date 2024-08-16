@@ -8,7 +8,7 @@
 
   &__top {
     @extend %flex-sb;
-    gap: 20px;
+    gap: 25px;
 
     @include mq('tablet') {
       flex-direction: column;

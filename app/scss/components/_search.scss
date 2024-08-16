@@ -43,7 +43,7 @@
     border-bottom-right-radius: 5px;
     padding: 17px 40px;
     position: relative;
-    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease, opacity 0.5s ease;
 
     &::before {
       @extend %pseudo;
@@ -74,14 +74,10 @@
     }
 
     &:hover {
-      border-color: $accent;
-      color: $accent;
-      background-color: rgba($sand, .2);
+      opacity: 0.75;
 
       @include mq('tablet-3') {
-        border-color: transparent;
-        color: $white;
-        background-color: $accent;
+        opacity: 1;
       }
       
       @include mq('phone-m') {
@@ -93,7 +89,7 @@
     &:active {
       color: $accent;
       border-color: transparent;
-      background-color: rgba($sand, .1);
+      background-color: rgba($sand, .3);
     }
   }
 }
