@@ -11,6 +11,30 @@ body {
   background-color: $white;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+
+  &::before {
+    @extend %pseudo;
+    position: fixed;
+    inset: 0;
+    background-color: rgba($black, 0);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.5s ease;
+  }
+  
+  &.lock {
+    overflow-y: hidden;
+    
+    &::before {
+      background-color: rgba($black, .5);
+      z-index: 20;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 .main {

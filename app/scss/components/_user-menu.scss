@@ -2,6 +2,14 @@
   display: flex;
   gap: 5px;
 
+  @include mq('tablet') {
+    margin-left: auto;
+  }
+
+  @include mq('phone-2') {
+    gap: 0;
+  }
+
   &__btn {
     @extend %flex-cc;
     width: 44px;

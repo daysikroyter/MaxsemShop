@@ -4,6 +4,7 @@ $white: #fff;
 $black: #000;
 $sand: rgb(225, 184, 131);
 $silver: rgb(202, 202, 202);
+$border: #eeeff3;
 
 $breakpoints: (
   "phone-s": 321px,
@@ -51,6 +52,11 @@ $breakpoints: (
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+%trans-y {
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 %flex-sbc {

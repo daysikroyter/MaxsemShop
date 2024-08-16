@@ -2,14 +2,26 @@
   box-shadow: 0px 0px 60px 0px rgba($silver, .35);
   padding-top: 50px;
 
+  @include mq('tablet') {
+    padding-top: 25px;
+  }
+
   &__top {
     @extend %flex-sb;
     gap: 20px;
+
+    @include mq('tablet') {
+      flex-direction: column;
+    }
   }
 
   &__info {
     max-width: 350px;
     width: 100%;
+
+    @include mq('tablet') {
+      max-width: 100%;
+    }
   }
 
   &__logo {
@@ -23,6 +35,12 @@
   &__items {
     display: flex;
     gap: 50px;
+
+    @include mq('tablet') {
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 5px;
+    }
   }
 
   &__title {
@@ -30,17 +48,75 @@
     margin-bottom: 15px;
   }
 
+  &__name {    
+    @include mq('tablet') {
+      font-size: 16px;
+      color: $black;
+      background-color: #f0f0f4;
+      padding: 15px 45px 15px 15px;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    &::before {
+      @extend %pseudo;
+      @extend %bg;
+      display: none;
+      right: 15px;
+      top: 50%;
+      background-image: url('../images/icons/next-black-arrow.svg');
+      width: 15px;
+      height: 15px;
+      transform: translateY(-50%) rotate(90deg);
+      transition: transform 0.5s ease;
+      
+      @include mq('tablet') {
+        display: block;
+      }
+    }
+
+    &--active::before {
+      transform: translateY(-50%) rotate(270deg);
+    }
+  }
+
+  &__list {
+    display: block;
+
+    @include mq('tablet') {
+      display: none;
+      box-shadow: 0px 0px 60px 0px rgba(202, 202, 202, .35);
+      padding: 20px;
+    }
+  }
+
   &__elem {
     font-size: 16px;
 
     &:not(:last-child) {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__social.social {
+    @include mq('tablet-3') {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @include mq('tablet') {
+      flex-direction: row;
+      gap: 20px;
     }
   }
 
   &__bottom {
     padding: 50px 0;
     text-align: center;
+
+    @include mq('tablet') {
+      padding: 25px 0;
+    }
   }
 
   &__linkage {

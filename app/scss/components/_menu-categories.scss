@@ -3,6 +3,11 @@
   justify-content: space-evenly;
   gap: 20px;
 
+  @include mq('tablet-2') {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
   &__link {
     padding: 15px 0;
   }
