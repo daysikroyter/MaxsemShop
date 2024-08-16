@@ -24,10 +24,10 @@ body {
     z-index: -1;
     transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.5s ease;
   }
-  
+
   &.lock {
     overflow-y: hidden;
-    
+
     &::before {
       background-color: rgba($black, .5);
       z-index: 20;
@@ -45,6 +45,10 @@ body {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 50px;
 }
 
 .sr-only {
@@ -162,4 +166,8 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-submit-button {
   display: none;
+}
+
+.price {
+  font-family: "Barlow", sans-serif;
 }

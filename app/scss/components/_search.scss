@@ -2,12 +2,6 @@
 
   &__form {
     display: flex;
-
-    @include mq('phone-s') {
-      flex-wrap: wrap;
-      gap: 10px;
-      text-align: center;
-    }
   }
   
   &__input {
@@ -22,11 +16,6 @@
     padding: 15px 20px;
     width: 100%;
     transition: opacity 0.5s ease, border-color 0.5s ease;
-    
-    @include mq('phone-s') {
-      border-radius: 0;
-      text-align: center;
-    }
 
     &:focus {
       border-color: $accent;
@@ -53,11 +42,29 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 17px 40px;
+    position: relative;
     transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
 
-    @include mq('phone-s') {
-      border-radius: 0;
-      width: 100%;
+    &::before {
+      @extend %pseudo;
+      @extend %bg;
+      @extend %trans;
+      width: 24px;
+      height: 24px;
+      background-image: url('../images/icons/search.svg');
+      display: none;
+      
+      @include mq('phone-m') {
+        display: block;
+      }
+    }
+
+    @include mq('phone-m') {
+      width: 54px;
+      height: 54px;
+      background-color: transparent;
+      font-size: 0;
+      box-shadow: 0px 0px 60px 10px rgba(202, 202, 202, .35);
     }
 
     &:focus {
@@ -75,6 +82,11 @@
         border-color: transparent;
         color: $white;
         background-color: $accent;
+      }
+      
+      @include mq('phone-m') {
+        border-color: transparent;
+        background-color: transparent;
       }
     }
 

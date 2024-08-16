@@ -1,0 +1,107 @@
+.promo-item {
+  max-width: 265px;
+  width: 100%;
+  @extend %flex-sb;
+  flex-direction: column;
+  border-radius: 3px;
+  border: 1px solid $gray;
+  text-align: center;
+  transition: box-shadow 0.5s ease;
+
+  @include mq('tablet-3') {
+    display: none;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($accent, 0.7);
+  }
+
+  &:hover .promo-item__img {
+    transform: scale(1.05);
+  }
+
+  &:hover .promo-item__title {
+    color: $accent;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:active .promo-item__img {
+    transform: scale(0.9);
+  }
+
+  &__top {
+    @extend %flex-sbs;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    @extend %sf-bold;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 1.2px;
+    color: $white;
+    background-color: $accent;
+    text-transform: uppercase;
+    padding: 8px 20px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+    line-height: 1.2;
+  }
+
+  &__new-price {
+    @extend %sf-bold;
+    font-size: 27px;
+    color: $accent;
+  }
+
+  &__old-price {
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+    color: $oldPrice;
+    padding: 2px 5px;
+    background-image: url('../images/icons/line.svg');
+    @extend %back;
+  }
+
+  &__box {
+    overflow: hidden;
+  }
+
+  &__img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+    margin: 0 auto 5px;
+    transition: transform 0.5s ease;
+  }
+
+  &__title {
+    @extend %sf-bold;
+    line-height: 1.1;
+    max-width: 215px;
+    margin: 0 auto 15px;
+    transition: color 0.5s ease;
+  }
+
+  &__text {
+    line-height: 1.3;
+    padding: 22px 20px;
+    background-color: $lightGray;
+
+    span {
+      font-family: "Barlow", sans-serif;
+      font-weight: 700;
+      color: $accent;
+      display: block;
+    }
+  }
+}

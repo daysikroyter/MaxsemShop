@@ -38,11 +38,11 @@ function fonts() {
 
 function images() {
   return src(['app/images/src/*.*', '!app/images/src/*.svg'])    
-    .pipe(src('app/images/src/*.*'))
+    .pipe(src('app/images/src/**/*.*'))
     .pipe(newer('app/images'))
     .pipe(webp())
-    
-    .pipe(src('app/images/src/*.*'))
+
+    .pipe(src('app/images/src/**/*.*'))
     .pipe(newer('app/images'))
     .pipe(imagemin())
 
@@ -87,6 +87,7 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))

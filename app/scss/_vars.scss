@@ -5,6 +5,9 @@ $black: #000;
 $sand: rgb(225, 184, 131);
 $silver: rgb(202, 202, 202);
 $border: #eeeff3;
+$gray: #cdcdcd;
+$oldPrice: #c4c4c4;
+$lightGray: #F0F0F4;
 
 $breakpoints: (
   "phone-s": 321px,
@@ -17,6 +20,7 @@ $breakpoints: (
   "tablet-3": 993px,
   "desktop": 1050px,
   "large-desktop": 1100px,
+  "desktop-xxl": 1151px,
   "mobile-height-l": 788px,
   "mobile-height": 576px,
   "mobile-height-2": 440px
@@ -54,9 +58,25 @@ $breakpoints: (
   background-position: center;
 }
 
+%back {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 %trans-y {
   top: 50%;
   transform: translateY(-50%);
+}
+
+%trans-x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%trans {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 %flex-sbc {
@@ -70,7 +90,14 @@ $breakpoints: (
   justify-content: center;
   align-items: center;
 }
+
 %flex-sb {
   display: flex;
   justify-content: space-between;
+}
+
+%flex-sbs {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
