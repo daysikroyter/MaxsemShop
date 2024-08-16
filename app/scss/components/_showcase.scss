@@ -1,0 +1,139 @@
+.showcase {
+  padding-bottom: 30px;
+
+  @include mq('desktop-xxxxl') {
+    padding-bottom: 62px;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 3px;
+    margin-bottom: 25px;
+
+    @include mq('tablet-2') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__tab {
+    &.tab--active::before {
+      width: 100%;
+    }
+  }
+
+  &__container {
+    position: relative;
+    min-height: 404px;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: $white;
+
+    &.tabs-content--active {
+      opacity: 1;
+      z-index: 15;
+    }
+  }
+
+  &__item {
+    max-width: 280px;
+
+    @include mq('desktop') {
+      max-width: 310px;
+    }
+
+    @include mq('tablet-2') {
+      max-width: 380px;
+    }
+
+    @include mq('phone-3') {
+      max-width: 100%;
+    }
+  }
+
+  & .slick-list {
+    padding: 15px 5px 20px;
+  }
+
+  .slick-slide {
+    margin: 0 10px;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    @extend %trans-y;
+    transition: fill 0.5s ease;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    @extend %flex-cc;
+    transition: box-shadow 0.5s ease, fill 0.5s ease;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($accent, 0.7);
+    }
+
+    &:hover {
+      fill: $accent;
+    }
+
+    &:active {
+      fill: rgba($accent, 0.5);
+      box-shadow: none;
+    }
+  }
+
+  .slick-prev {
+    left: -60px;
+  }
+
+  .slick-next {
+    right: -60px;
+    transform: translateY(-50%) scale(-1, 1);
+  }
+
+  .slick-dots {
+    @extend %flex-cc;
+    gap: 20px;
+
+    li button {
+      width: 14px;
+      height: 14px;
+      background-color: $oldPrice;
+      border-radius: 50%;
+      font-size: 0;
+      transition: background-color 0.5s ease;
+      
+      &:focus {
+        box-shadow: 0 0 0 2px rgba($accent, 0.7);
+      }
+      
+      &:hover {
+        background-color: $accent;
+        
+        @include mq('tablet-3') {
+          background-color: $oldPrice;
+        }
+      }
+    }
+
+    .slick-active button {
+      background-color: $accent;
+
+      &:hover {
+        @include mq('tablet-3') {
+          background-color: $accent;
+        }
+      }
+    }
+  }
+}

@@ -13,9 +13,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
+    @include mq('desktop-xxl') {
+      gap: 15px;
+    }
+
     @include mq('tablet-3') {
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
     }
 
     @include mq('tablet') {
