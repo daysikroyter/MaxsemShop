@@ -1,10 +1,12 @@
 html,
 body {
   height: 100%;
+  position: relative;
 }
 
 body {
-  @extend %sf-regular;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.3;
   color: $default;
@@ -183,4 +185,51 @@ input[type="search"]::-webkit-search-submit-button {
   @include mq('tablet') {
     margin-bottom: 50px;
   }
+}
+
+.menu-button {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  border-radius: 50%;
+  transition: opacity 0.5s ease, box-shadow 0.5s ease;
+
+  @include mq('phone-2') {
+    top: 20px;
+    right: 20px;
+  }
+
+  &::before {
+    @extend %pseudo;
+    @extend %bg;
+    inset: 0;
+    background-image: url('../images/icons/close-btn.svg');
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($accent, .7);
+  }
+
+  &:hover {
+    opacity: 0.7;
+
+    @include mq('tablet-3') {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    opacity: 0.5;
+  }
+}
+
+.on {
+  display: block;
+}
+
+.off {
+  display: none;
 }

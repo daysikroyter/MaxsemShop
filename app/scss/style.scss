@@ -1,5 +1,4 @@
 @import 'reset';
-@import 'fonts';
 @import 'vars';
 @import 'libs';
 @import 'mixin';
@@ -25,3 +24,6 @@
 @import 'page_index/products';
 @import 'components/showcase';
 @import 'components/product-card';
+
+@import 'components/profile-menu';
+@import 'components/menu-catalog';

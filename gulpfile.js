@@ -119,9 +119,8 @@ function cleanDist() {
 function building() {
   return src([
     'app/css/style.min.css',
-    'app/images/*.*',
-    'app/images/sprite/sprite.svg',
-    'app/fonts/*.*',
+    'app/images/**/*.*',
+    'app/images/icons/sprite/sprite.svg',
     'app/js/main.min.js',
     'app/**/*.html'
   ], {base : 'app'})

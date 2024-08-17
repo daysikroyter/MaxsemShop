@@ -8,6 +8,8 @@ $border: #eeeff3;
 $gray: #cdcdcd;
 $oldPrice: #c4c4c4;
 $lightGray: #F0F0F4;
+$lightBlack: #292929;
+$red: #fe3e57;
 
 $breakpoints: (
   "phone-s": 321px,
@@ -26,26 +28,6 @@ $breakpoints: (
   "mobile-height": 576px,
   "mobile-height-2": 440px
 );
-
-%sf-regular {
-  font-family: 'SFProDisplay-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%sf-medium {
-  font-family: 'SFProDisplay-Regular', sans-serif;
-  font-weight: 500;
-}
-
-%sf-semibold {
-  font-family: 'SFProDisplay-Regular', sans-serif;
-  font-weight: 600;
-}
-
-%sf-bold {
-  font-family: 'SFProDisplay-Regular', sans-serif;
-  font-weight: 700;
-}
 
 %pseudo {
   content: '';
@@ -101,4 +83,9 @@ $breakpoints: (
   display: flex;
   justify-content: space-between;
   align-items: start;
+}
+
+%flex-ac {
+  display: flex;
+  align-items: center;
 }

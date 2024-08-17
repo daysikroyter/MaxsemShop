@@ -78,7 +78,7 @@
 
   &__circle {
     @extend %flex-cc;
-    @extend %sf-medium;
+    font-weight: 500;
     font-size: 10px;
     line-height: 1.2;
     width: 15px;

@@ -43,9 +43,42 @@ $(function () {
     $('body').removeClass('lock');
   });
 
+  $('.user-menu__btn--profile').on('click', function () {
+    $('.profile-menu').addClass('profile-menu--active');
+    $('body').addClass('lock');
+  });
+
+  $('.user-menu__btn--basket').on('click', function () {
+    $('.menu-catalog--basket').addClass('menu-catalog--basket-active');
+    $('body').addClass('lock');
+  });
+
+  $('.user-menu__btn--heart').on('click', function () {
+    $('.menu-catalog--heart').addClass('menu-catalog--heart-active');
+    $('body').addClass('lock');
+  });
+
+  $('.profile-menu__close').on('click', function () {
+    $('.profile-menu').removeClass('profile-menu--active');
+    $('body').removeClass('lock');
+  });
+
+  $('.menu-catalog__btn-basket').on('click', function () {
+    $('.menu-catalog--basket').removeClass('menu-catalog--basket-active');
+    $('body').removeClass('lock');
+  });
+
+  $('.menu-catalog__btn-heart').on('click', function () {
+    $('.menu-catalog--heart').removeClass('menu-catalog--heart-active');
+    $('body').removeClass('lock');
+  });
+
   $(document).on('click', function (event) {
     if ($(event.target).hasClass('lock')) {
       $('.menu-burger').removeClass('menu-burger--active');
+      $('.profile-menu').removeClass('profile-menu--active');
+      $('.menu-catalog--basket').removeClass('menu-catalog--basket-active');
+      $('.menu-catalog--heart').removeClass('menu-catalog--heart-active');
       $('body').removeClass('lock');
     }
   });
@@ -128,4 +161,34 @@ $(function () {
     ]
   });
 
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const numberInputs = document.querySelectorAll(".menu-catalog__number-input");
+
+  numberInputs.forEach(input => {
+    const numberElement = input.querySelector(".menu-catalog__number");
+    const min = Number(input.getAttribute("min")) || 0;
+    const max = Number(input.getAttribute("max")) || Infinity;
+    const step = Number(input.getAttribute("step")) || 1;
+
+    let value = Number(numberElement.textContent) || min;
+
+    function increase() {
+      if (value + step <= max) {
+        value += step;
+        numberElement.textContent = value;
+      }
+    }
+
+    function decrease() {
+      if (value - step >= min) {
+        value -= step;
+        numberElement.textContent = value;
+      }
+    }
+
+    input.querySelector(".menu-catalog__button.plus").addEventListener("click", increase);
+    input.querySelector(".menu-catalog__button.minus").addEventListener("click", decrease);
+  });
 });

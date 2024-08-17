@@ -30,19 +30,6 @@
       stroke: $default;
     }
 
-    &:hover {
-      .heart-ico {
-        fill: $accent;
-        stroke: transparent;
-
-        @include mq('tablet-3') {
-          fill: transparent;
-          stroke: $default;
-        }
-      }
-
-    }
-
     &.product-card__favorite--active .heart-ico {
       fill: $accent;
       stroke: transparent;
@@ -170,7 +157,7 @@
   }
 
   &__price {
-    @extend %sf-bold;
+    font-weight: 700;
     font-size: 30px;
     line-height: 36px;
     transition: color 0.5s ease;
@@ -179,8 +166,8 @@
 
   &__notify-text {
     display: none;
-    @extend %sf-bold;
     font-size: 18px;
+    font-weight: 700;
     transition: color 0.5s ease;
     padding-bottom: 33px;
     margin-top: auto;

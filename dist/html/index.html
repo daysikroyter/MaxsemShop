@@ -1,0 +1,21 @@
+@include('components/_head.html', {
+  "@page_title": "Главная"
+})
+
+@include('components/_header.html')
+
+<main class="main">
+
+  @include('page_index/_promo.html')
+
+  @include('page_index/_categories.html')
+
+  @include('page_index/_products.html')
+
+  @include('components/_explore.html')
+
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_footer-scripts.html')

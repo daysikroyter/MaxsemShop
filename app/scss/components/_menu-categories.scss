@@ -3,7 +3,7 @@
   justify-content: space-evenly;
   gap: 20px;
 
-  @include mq('tablet-2') {
+  @include mq('tablet-3') {
     overflow-x: auto;
     white-space: nowrap;
   }
