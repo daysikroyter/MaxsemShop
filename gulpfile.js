@@ -9,10 +9,6 @@ const clean = require('gulp-clean');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
-const fonter = require('gulp-fonter');
-const ttf2woff2 = require('gulp-ttf2woff2');
-const svgSprite = require('gulp-svg-sprite');
-const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
 const fileInclude = require('gulp-file-include');
 
@@ -26,16 +22,6 @@ const htmlInclude = () => {
     .pipe(browserSync.stream());
 }
 
-function fonts() {
-  return src('app/fonts/src/*.*') 
-    .pipe(fonter({
-      formats: ['woff', 'ttf']
-    }))
-    .pipe(src('app/fonts/*.ttf'))
-    .pipe(ttf2woff2())
-    .pipe(dest('app/fonts'))
-}
-
 function images() {
   return src(['app/images/src/*.*', '!app/images/src/*.svg'])    
     .pipe(src('app/images/src/**/*.*'))
@@ -47,30 +33,6 @@ function images() {
     .pipe(imagemin())
 
     .pipe(dest('app/images'))
-}
-
-function svgSprites() {
-  return src('app/images/icons/*.svg')
-    .pipe(cheerio({
-      run: ($) => {
-        $("[fill]").removeAttr("fill");
-        $("[stroke]").removeAttr("stroke");
-        $("[style]").removeAttr("style");
-      },
-      parserOptions: { xmlMode: true },
-    })
-    )
-    .pipe(replace('&gt;', '>'))
-    .pipe(
-      svgSprite({
-        mode: {
-          symbol: {
-            sprite: '../sprite.svg',
-          },
-        },
-      })
-    )
-    .pipe(dest('app/images/icons/sprite'));
 }
 
 function styles() {
@@ -104,7 +66,6 @@ function watching() {
     notify: false
   });
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/images/icons/*.svg'], svgSprites);
   watch(['app/images/src'], images);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
@@ -120,7 +81,6 @@ function building() {
   return src([
     'app/css/style.min.css',
     'app/images/**/*.*',
-    'app/images/icons/sprite/sprite.svg',
     'app/js/main.min.js',
     'app/**/*.html'
   ], {base : 'app'})
@@ -129,12 +89,10 @@ function building() {
 
 exports.styles = styles;
 exports.images = images;
-exports.fonts = fonts;
 exports.building = building;
 exports.scripts = scripts;
 exports.watching = watching;
-exports.svgSprites = svgSprites;
 exports.htmlInclude = htmlInclude;
 
 exports.build = series(cleanDist, building);
-exports.default = parallel(styles, scripts, watching, svgSprites, images, fonts, htmlInclude);
+exports.default = parallel(styles, scripts, watching, images, htmlInclude);

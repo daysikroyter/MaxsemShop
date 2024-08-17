@@ -17,27 +17,20 @@
     border-radius: 5px;
     position: relative;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
-
+    
     &:focus {
       background-color: rgba($black, .1);
       box-shadow: 0 0 0 2px rgba($accent, 0.70);
     }
-
+    
     &:hover {
       background-color: $accent;
+      fill: $white;
 
       @include mq('tablet-3') {
         background-color: transparent;
       }
 
-      .user-ico {
-        fill: $white;
-
-        @include mq('tablet-3') {
-          fill: #000;
-        }
-      }
-      
       .heart-ico {
         stroke: $white;
 
