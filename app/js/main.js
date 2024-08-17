@@ -1,29 +1,26 @@
 $(function () {
 
-  function checkScreenWidth() {
-    const $lists = $('.footer__list');
+  function handleClick() {
+    console.log("Footer name clicked");
+    var $parentItem = $(this).parent();
 
-    if ($(window).width() < 769) {
-      if (!$('.footer__name').data('initialized')) {
-        $('.footer__name').on('click', function () {
-          const $list = $(this).next('.footer__list');
-          $list.slideToggle(400);
-
-          $(this).toggleClass('footer__name--active');
-        }).data('initialized', true);
-      }
-
-      $lists.each(function () {
-        if ($(this).is(':visible')) {
-          $(this).hide();
-        }
-      });
-
+    if ($parentItem.hasClass('footer__item--active')) {
+      $parentItem.removeClass('footer__item--active');
     } else {
-      $('.footer__name').off('click').data('initialized', false);
-      $lists.show();
+      $('.footer__item').removeClass('footer__item--active');
+      $parentItem.addClass('footer__item--active');
+    }
+  }
 
-      $('.footer__name').removeClass('footer__name--active');
+  function checkScreenWidth() {
+    console.log("Checking screen width: " + $(window).width());
+    if ($(window).width() < 769) {
+      $('.footer__name').off('click').on('click', handleClick);
+      console.log("Click handler added");
+    } else {
+      $('.footer__name').off('click');
+      $('.footer__item').removeClass('footer__item--active');
+      console.log("Click handler removed and items reset");
     }
   }
 
