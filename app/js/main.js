@@ -1,35 +1,5 @@
 $(function () {
 
-  function handleClick() {
-    console.log("Footer name clicked");
-    var $parentItem = $(this).parent();
-
-    if ($parentItem.hasClass('footer__item--active')) {
-      $parentItem.removeClass('footer__item--active');
-    } else {
-      $('.footer__item').removeClass('footer__item--active');
-      $parentItem.addClass('footer__item--active');
-    }
-  }
-
-  function checkScreenWidth() {
-    console.log("Checking screen width: " + $(window).width());
-    if ($(window).width() < 769) {
-      $('.footer__name').off('click').on('click', handleClick);
-      console.log("Click handler added");
-    } else {
-      $('.footer__name').off('click');
-      $('.footer__item').removeClass('footer__item--active');
-      console.log("Click handler removed and items reset");
-    }
-  }
-
-  checkScreenWidth();
-
-  $(window).resize(function () {
-    checkScreenWidth();
-  });
-
   $('.menu__btn').on('click', function () {
     $('.menu-burger').addClass('menu-burger--active');
     $('body').addClass('lock');

@@ -37,76 +37,20 @@
     gap: 50px;
 
     @include mq('tablet') {
-      flex-direction: column;
-      gap: 0;
+      gap: 20px 50px;
+      justify-content: center;
       margin-bottom: 5px;
+    }
+
+    @include mq('phone-2') {
+      flex-wrap: wrap;
+      justify-content: start;
     }
   }
 
   &__title {
     font-size: 20px;
     margin-bottom: 15px;
-  }
-
-  &__name {
-    @include mq('tablet') {
-      font-size: 16px;
-      color: $black;
-      background-color: #f0f0f4;
-      padding: 15px 45px 15px 15px;
-      margin-bottom: 0;
-      position: relative;
-    }
-
-    &::before {
-      @extend %pseudo;
-      @extend %bg;
-      display: none;
-      right: 15px;
-      top: 50%;
-      background-image: url('../images/icons/next-black-arrow.svg');
-      width: 15px;
-      height: 15px;
-      transform: translateY(-50%) rotate(90deg);
-      transition: transform 0.5s ease;
-
-      @include mq('tablet') {
-        display: block;
-      }
-    }
-  }
-
-  &__item {
-    &.footer__item--active .footer__item-inner {
-      padding: 0;
-      @include mq('tablet') {
-        opacity: 1;
-        grid-template-rows: 1fr;
-        padding: 15px;
-      }
-    }
-
-    &.footer__item--active .footer__name::before {
-      transform: translateY(-50%) rotate(270deg);
-    }
-  }
-
-  &__item-inner {
-    padding: 0;
-
-    @include mq('tablet') {
-      display: grid;
-      grid-template-rows: 0fr;
-      overflow: hidden;
-      opacity: 0;
-      padding: 0;
-      box-shadow: 0px 0px 60px 0px rgba(202, 202, 202, .35);
-      transition: grid-template-rows .5s ease, opacity .3s ease, padding 0.5s ease;
-    }
-  }
-
-  &__list {
-    min-height: 0 !important;
   }
 
   &__elem {
