@@ -88,8 +88,8 @@ $(function () {
   $('.showcase__list').slick({
     slidesToShow: 4,
     autoplay: true,
-    prevArrow: '<button type="button" class="slick-arrow slick-prev"><svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.9673 14.1924L14.9422 1.37269C15.2613 1.05741 15.2613 0.551755 14.9422 0.236466C14.6231 -0.0788221 14.1113 -0.0788221 13.7922 0.236466L0.239328 13.6273C-0.0797759 13.9426 -0.0797759 14.4482 0.239328 14.7635L13.7922 28.1484C13.9487 28.3031 14.1595 28.3864 14.3642 28.3864C14.5689 28.3864 14.7796 28.309 14.9362 28.1484C15.2553 27.8331 15.2553 27.3275 14.9362 27.0122L1.9673 14.1924Z" fill="#2F3035" /></svg></button>',
-    nextArrow: '<button type="button" class="slick-arrow slick-next"><svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.9673 14.1924L14.9422 1.37269C15.2613 1.05741 15.2613 0.551755 14.9422 0.236466C14.6231 -0.0788221 14.1113 -0.0788221 13.7922 0.236466L0.239328 13.6273C-0.0797759 13.9426 -0.0797759 14.4482 0.239328 14.7635L13.7922 28.1484C13.9487 28.3031 14.1595 28.3864 14.3642 28.3864C14.5689 28.3864 14.7796 28.309 14.9362 28.1484C15.2553 27.8331 15.2553 27.3275 14.9362 27.0122L1.9673 14.1924Z" fill="#2F3035" /></svg></button>',
+    dots: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1320,
@@ -103,8 +103,6 @@ $(function () {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: true,
-          arrows: false
         }
       },
       {
@@ -112,8 +110,6 @@ $(function () {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true,
-          arrows: false
         }
       },
       {
@@ -121,8 +117,6 @@ $(function () {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
-          arrows: false
         }
       },
     ]
@@ -152,6 +146,114 @@ $(function () {
 
     $input.find('.input-field__button.plus').on('click', increase);
     $input.find('.input-field__button.minus').on('click', decrease);
+  });
+
+  var $range1 = $(".js-range-slider-1"),
+    $inputFrom1 = $(".js-input-from-1"),
+    $inputTo1 = $(".js-input-to-1"),
+    min1 = 0,
+    max1 = 200,
+    from1 = 50,
+    to1 = 150;
+
+  $range1.ionRangeSlider({
+    type: "double",
+    min: min1,
+    max: max1,
+    from: from1,
+    to: to1,
+    min_interval: 20,
+    onStart: updateInputs1,
+    onChange: updateInputs1
+  });
+
+  function updateInputs1(data) {
+    $inputFrom1.prop("value", data.from);
+    $inputTo1.prop("value", data.to);
+  }
+
+  $inputFrom1.on("input", function () {
+    var val = Math.min(Math.max($(this).val(), min1), to1);
+    $range1.data("ionRangeSlider").update({ from: val });
+  });
+
+  $inputTo1.on("input", function () {
+    var val = Math.min(Math.max($(this).val(), from1), max1);
+    $range1.data("ionRangeSlider").update({ to: val });
+  });
+
+  var $range2 = $(".js-range-slider-2"),
+    $inputFrom2 = $(".js-input-from-2"),
+    $inputTo2 = $(".js-input-to-2"),
+    min2 = 0,
+    max2 = 114,
+    from2 = 20,
+    to2 = 100;
+
+  $range2.ionRangeSlider({
+    type: "double",
+    min: min2,
+    max: max2,
+    from: from2,
+    to: to2,
+    min_interval: 20,
+    onStart: updateInputs2,
+    onChange: updateInputs2
+  });
+
+  function updateInputs2(data) {
+    $inputFrom2.prop("value", data.from);
+    $inputTo2.prop("value", data.to);
+  }
+
+  $inputFrom2.on("input", function () {
+    var val = Math.min(Math.max($(this).val(), min2), to2);
+    $range2.data("ionRangeSlider").update({ from: val });
+  });
+
+  $inputTo2.on("input", function () {
+    var val = Math.min(Math.max($(this).val(), from2), max2);
+    $range2.data("ionRangeSlider").update({ to: val });
+  });
+
+  var $range3 = $(".js-range-slider-3"),
+    $inputFrom3 = $(".js-input-from-3"),
+    $inputTo3 = $(".js-input-to-3"),
+    min3 = 96,
+    max3 = 4876,
+    from3 = 900,
+    to3 = 4000;
+
+  $range3.ionRangeSlider({
+    type: "double",
+    min: min3,
+    max: max3,
+    from: from3,
+    to: to3,
+    min_interval: 650,
+    onStart: updateInputs3,
+    onChange: updateInputs3
+  });
+
+  function updateInputs3(data) {
+    $inputFrom3.prop("value", data.from);
+    $inputTo3.prop("value", data.to);
+  }
+
+  $inputFrom3.on("input", function () {
+    var val = Math.min(Math.max($(this).val(), min3), to3);
+    $range3.data("ionRangeSlider").update({ from: val });
+  });
+
+  $inputTo3.on("input", function () {
+    var val = Math.min(Math.max($(this).val(), from3), max3);
+    $range3.data("ionRangeSlider").update({ to: val });
+  });
+
+  $('.select-style').styler();
+
+  $('.link--disabled').on('click', function (e) {
+    e.preventDefault();
   });
 
 });

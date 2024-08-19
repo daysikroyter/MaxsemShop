@@ -42,6 +42,7 @@
   max-width: 870px;
   height: 400px;
   width: 100%;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 1150px) {
