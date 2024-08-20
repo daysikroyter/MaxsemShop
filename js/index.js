@@ -59,13 +59,6 @@ $(function () {
     }
   });
 
-  $('.promo__list').slick({
-    arrows: false,
-    dots: true,
-    fade: true,
-    autoplay: true
-  });
-
   $('.tab').on('click', function (e) {
     e.preventDefault();
 
@@ -92,21 +85,14 @@ $(function () {
     arrows: false,
     responsive: [
       {
-        breakpoint: 1320,
-        settings: {
-          dots: true,
-          arrows: false
-        }
-      },
-      {
-        breakpoint: 1050,
+        breakpoint: 1051,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         }
       },
       {
-        breakpoint: 860,
+        breakpoint: 861,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -147,110 +133,6 @@ $(function () {
     $input.find('.input-field__button.plus').on('click', increase);
     $input.find('.input-field__button.minus').on('click', decrease);
   });
-
-  var $range1 = $(".js-range-slider-1"),
-    $inputFrom1 = $(".js-input-from-1"),
-    $inputTo1 = $(".js-input-to-1"),
-    min1 = 0,
-    max1 = 200,
-    from1 = 50,
-    to1 = 150;
-
-  $range1.ionRangeSlider({
-    type: "double",
-    min: min1,
-    max: max1,
-    from: from1,
-    to: to1,
-    min_interval: 20,
-    onStart: updateInputs1,
-    onChange: updateInputs1
-  });
-
-  function updateInputs1(data) {
-    $inputFrom1.prop("value", data.from);
-    $inputTo1.prop("value", data.to);
-  }
-
-  $inputFrom1.on("input", function () {
-    var val = Math.min(Math.max($(this).val(), min1), to1);
-    $range1.data("ionRangeSlider").update({ from: val });
-  });
-
-  $inputTo1.on("input", function () {
-    var val = Math.min(Math.max($(this).val(), from1), max1);
-    $range1.data("ionRangeSlider").update({ to: val });
-  });
-
-  var $range2 = $(".js-range-slider-2"),
-    $inputFrom2 = $(".js-input-from-2"),
-    $inputTo2 = $(".js-input-to-2"),
-    min2 = 0,
-    max2 = 114,
-    from2 = 20,
-    to2 = 100;
-
-  $range2.ionRangeSlider({
-    type: "double",
-    min: min2,
-    max: max2,
-    from: from2,
-    to: to2,
-    min_interval: 20,
-    onStart: updateInputs2,
-    onChange: updateInputs2
-  });
-
-  function updateInputs2(data) {
-    $inputFrom2.prop("value", data.from);
-    $inputTo2.prop("value", data.to);
-  }
-
-  $inputFrom2.on("input", function () {
-    var val = Math.min(Math.max($(this).val(), min2), to2);
-    $range2.data("ionRangeSlider").update({ from: val });
-  });
-
-  $inputTo2.on("input", function () {
-    var val = Math.min(Math.max($(this).val(), from2), max2);
-    $range2.data("ionRangeSlider").update({ to: val });
-  });
-
-  var $range3 = $(".js-range-slider-3"),
-    $inputFrom3 = $(".js-input-from-3"),
-    $inputTo3 = $(".js-input-to-3"),
-    min3 = 96,
-    max3 = 4876,
-    from3 = 900,
-    to3 = 4000;
-
-  $range3.ionRangeSlider({
-    type: "double",
-    min: min3,
-    max: max3,
-    from: from3,
-    to: to3,
-    min_interval: 650,
-    onStart: updateInputs3,
-    onChange: updateInputs3
-  });
-
-  function updateInputs3(data) {
-    $inputFrom3.prop("value", data.from);
-    $inputTo3.prop("value", data.to);
-  }
-
-  $inputFrom3.on("input", function () {
-    var val = Math.min(Math.max($(this).val(), min3), to3);
-    $range3.data("ionRangeSlider").update({ from: val });
-  });
-
-  $inputTo3.on("input", function () {
-    var val = Math.min(Math.max($(this).val(), from3), max3);
-    $range3.data("ionRangeSlider").update({ to: val });
-  });
-
-  $('.select-style').styler();
 
   $('.link--disabled').on('click', function (e) {
     e.preventDefault();

@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Maxsem Shop" />
+  <meta property="og:description"
+    content="Maxsem – это единственная международная пиротехническая компания на молдавском рынке." />
+  <meta property="og:image" content="images/preview.webp" />
   <link rel="icon" href="images/icons/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,13 +15,11 @@
     href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
-  <link rel="stylesheet" href="css/jquery.formstyler.css">
-  <link rel="stylesheet" href="css/jquery.formstyler.theme.css">
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/shop.css">
-  <title>Maxsem | Каталог</title>
+  <link rel="stylesheet" href="css/footer.css">
+  <title>Maxsem | Каталог товаров</title>
 </head>
 
 <body>
@@ -27,7 +29,7 @@
       <div class="container">
         <div class="menu__top">
           <a class="logo menu__logo" href="index.html">
-            <img class="logo__img" src="images/logo.webp" alt="логотип">
+            <img class="logo__img" width="165px" height="45px" src="images/logo.webp" alt="логотип">
           </a>
           <ul class="menu__list">
             <li class="menu__item">
@@ -83,7 +85,7 @@
           <div class="menu-burger">
             <div class="menu-burger__box">
               <a class="logo" href="index.html">
-                <img class="logo__img" src="images/logo.webp" alt="логотип">
+                <img class="logo__img" width="165px" height="45px" src="images/logo.webp" alt="логотип">
               </a>
             </div>
             <button class="menu-burger__btn" type="button">
@@ -96,9 +98,6 @@
                 <a class="menu-burger__link link" href="#">О компании</a>
               </li>
               <li class="menu-burger__item">
-                <a class="menu-burger__link link" href="#">Оплата</a>
-              </li>
-              <li class="menu-burger__item">
                 <a class="menu-burger__link link" href="#">Опт</a>
               </li>
               <li class="menu-burger__item">
@@ -108,8 +107,7 @@
             <address class="address">
               <ul class="address__list">
                 <li class="address__item">
-                  <a class="address__link address__link--location"
-                    href="https://yandex.ru/maps/10313/kishinev/house/ZkEYfgVpS0UGQFptfXxweH5mbQ==/?ll=28.829201%2C47.019260&z=17">Ул.
+                  <a class="address__link address__link--location link--disabled">Ул.
                     Алексея Щусева 56/1</a>
                 </li>
                 <li class="address__item">
@@ -123,102 +121,25 @@
             <ul class="social menu-burger__social">
               <li class="social__item">
                 <a class="social__link" href="https://www.instagram.com/artificiimaxsem.md/">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_58_1)">
-                      <path
-                        d="M15.0046 7.29749C10.7509 7.29749 7.30713 10.745 7.30713 14.995C7.30713 19.2487 10.7546 22.6925 15.0046 22.6925C19.2584 22.6925 22.7021 19.245 22.7021 14.995C22.7021 10.7412 19.2546 7.29749 15.0046 7.29749ZM15.0046 19.9912C12.2434 19.9912 10.0084 17.755 10.0084 14.995C10.0084 12.235 12.2446 9.99874 15.0046 9.99874C17.7646 9.99874 20.0009 12.235 20.0009 14.995C20.0021 17.755 17.7659 19.9912 15.0046 19.9912Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M21.1848 0.095454C18.4248 -0.033296 11.5885 -0.027046 8.82605 0.095454C6.39855 0.209204 4.2573 0.795454 2.53105 2.5217C-0.353954 5.4067 0.0147958 9.29421 0.0147958 14.9955C0.0147958 20.8305 -0.310204 24.628 2.53105 27.4692C5.4273 30.3642 9.37104 29.9855 15.0048 29.9855C20.7848 29.9855 22.7798 29.9892 24.8235 29.198C27.6023 28.1192 29.6998 25.6355 29.9048 21.1742C30.0348 18.413 30.0273 11.578 29.9048 8.81546C29.6573 3.5492 26.831 0.355454 21.1848 0.095454ZM25.5535 25.5605C23.6623 27.4517 21.0385 27.283 14.9685 27.283C8.71854 27.283 6.2123 27.3755 4.38355 25.5417C2.2773 23.4455 2.65855 20.0792 2.65855 14.9755C2.65855 8.0692 1.9498 3.09545 8.88105 2.74045C10.4735 2.6842 10.9423 2.66545 14.951 2.66545L15.0073 2.70295C21.6685 2.70295 26.8948 2.00545 27.2085 8.93545C27.2798 10.5167 27.296 10.9917 27.296 14.9942C27.2948 21.1717 27.4123 23.693 25.5535 25.5605Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M23.0077 8.79245C24.0012 8.79245 24.8065 7.98712 24.8065 6.9937C24.8065 6.00027 24.0012 5.19495 23.0077 5.19495C22.0143 5.19495 21.209 6.00027 21.209 6.9937C21.209 7.98712 22.0143 8.79245 23.0077 8.79245Z"
-                        fill="#2F3035" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_58_1">
-                        <rect width="30" height="30" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <img class="social__img" src="images/icons/instagram.svg" width="30px" height="30px" alt="instagram">
                   <span class="sr-only">перейти в instagram</span>
                 </a>
               </li>
               <li class="social__item">
                 <a class="social__link" href="https://vk.com/public58795950">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M24.8938 16.285C24.4088 15.6725 24.5475 15.4 24.8938 14.8525C24.9 14.8462 28.9037 9.31375 29.3162 7.4375L29.3188 7.43625C29.5238 6.7525 29.3188 6.25 28.3275 6.25H25.0475C24.2125 6.25 23.8275 6.68125 23.6213 7.16375C23.6213 7.16375 21.9513 11.1613 19.5887 13.7525C18.8263 14.5012 18.4738 14.7413 18.0575 14.7413C17.8525 14.7413 17.5338 14.5013 17.5338 13.8175V7.43625C17.5338 6.61625 17.3 6.25 16.6087 6.25H11.4513C10.9275 6.25 10.6163 6.6325 10.6163 6.98875C10.6163 7.76625 11.7975 7.945 11.92 10.1325V14.8787C11.92 15.9187 11.7312 16.11 11.3125 16.11C10.1975 16.11 7.49125 12.0962 5.8875 7.5025C5.56375 6.61125 5.2475 6.25125 4.40625 6.25125H1.125C0.18875 6.25125 0 6.6825 0 7.165C0 8.0175 1.115 12.2562 5.185 17.8562C7.8975 21.6788 11.7175 23.75 15.1925 23.75C17.2812 23.75 17.5363 23.29 17.5363 22.4988C17.5363 18.8463 17.3475 18.5012 18.3937 18.5012C18.8787 18.5012 19.7137 18.7413 21.6637 20.585C23.8925 22.7712 24.2588 23.75 25.5063 23.75H28.7862C29.7212 23.75 30.195 23.29 29.9225 22.3825C29.2987 20.4738 25.0838 16.5475 24.8938 16.285Z"
-                      fill="#2F3035" />
-                  </svg>
+                  <img class="social__img" src="images/icons/vk.svg" width="30px" height="30px" alt="vk">
                   <span class="sr-only">перейти в vk</span>
                 </a>
               </li>
               <li class="social__item">
                 <a class="social__link" href="https://www.facebook.com/MaxsemUrkaine/">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_58_7)">
-                      <path
-                        d="M17.4188 29.8048C17.2938 29.8252 17.1684 29.8439 17.0425 29.8611C17.1684 29.8439 17.2938 29.8252 17.4188 29.8048Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M17.7188 29.7535C17.659 29.7645 17.5993 29.7746 17.5396 29.7849C17.5993 29.7746 17.659 29.7645 17.7188 29.7535Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M16.7072 29.9027C16.5609 29.9192 16.4137 29.9338 16.2661 29.9462C16.4137 29.9338 16.5609 29.9192 16.7072 29.9027Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M16.9952 29.8674C16.9249 29.8768 16.8542 29.8855 16.7837 29.8938C16.8542 29.8855 16.9249 29.8768 16.9952 29.8674Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M18.1271 29.6725C18.0745 29.6837 18.0216 29.6949 17.9688 29.7057C18.0216 29.6949 18.0745 29.6837 18.1271 29.6725Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M19.1404 29.4207C19.0978 29.4328 19.0553 29.4442 19.0127 29.4561C19.0553 29.4442 19.0978 29.4328 19.1404 29.4207Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M18.834 29.5045C18.7878 29.5166 18.7413 29.529 18.6948 29.5407C18.7413 29.529 18.7878 29.5169 18.834 29.5045Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M18.433 29.6047C18.384 29.6162 18.3346 29.6269 18.2852 29.6379C18.3346 29.6269 18.384 29.6162 18.433 29.6047Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M16.2615 29.9467C16.1826 29.9533 16.1036 29.9592 16.0244 29.9645C16.1036 29.9592 16.1826 29.9533 16.2615 29.9467Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M30 15C30 6.717 23.283 0 15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C15.0881 30 15.1758 29.9982 15.2637 29.9966V18.3197H12.041V14.564H15.2637V11.8002C15.2637 8.59497 17.2204 6.85043 20.0796 6.85043C21.4487 6.85043 22.6257 6.95251 22.9688 6.99806V10.348H20.9972C19.4417 10.348 19.1405 11.0873 19.1405 12.1719V14.564H22.8598L22.375 18.3197H19.1405V29.4205C25.4102 27.6231 30 21.8468 30 15Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M15.9911 29.9666C15.835 29.9766 15.6782 29.9846 15.521 29.9899C15.6782 29.9846 15.835 29.9766 15.9911 29.9666Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M15.5127 29.9904C15.4298 29.9931 15.3468 29.9952 15.2637 29.9965C15.3468 29.9952 15.4298 29.9931 15.5127 29.9904Z"
-                        fill="#2F3035" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_58_7">
-                        <rect width="30" height="30" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <img class="social__img" src="images/icons/facebook.svg" width="30px" height="30px" alt="facebook">
                   <span class="sr-only">перейти в facebook</span>
                 </a>
               </li>
               <li class="social__item">
                 <a class="social__link" href="https://www.youtube.com/user/MaxsemFireworks">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_58_20)">
-                      <path d="M13.1318 17.8102L18.0111 15L13.1318 12.1898V17.8102Z" fill="#2F3035" />
-                      <path
-                        d="M15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C23.283 30 30 23.283 30 15C30 6.717 23.283 0 15 0ZM24.3727 15.0153C24.3727 15.0153 24.3727 18.0574 23.9868 19.5243C23.7705 20.3272 23.1374 20.9603 22.3345 21.1764C20.8676 21.5625 15 21.5625 15 21.5625C15 21.5625 9.14772 21.5625 7.66548 21.161C6.86256 20.945 6.22948 20.3117 6.01318 19.5087C5.62706 18.0574 5.62706 15 5.62706 15C5.62706 15 5.62706 11.9582 6.01318 10.4913C6.22925 9.68834 6.8779 9.03969 7.66548 8.82362C9.13239 8.4375 15 8.4375 15 8.4375C15 8.4375 20.8676 8.4375 22.3345 8.83896C23.1374 9.05502 23.7705 9.68834 23.9868 10.4913C24.3883 11.9582 24.3727 15.0153 24.3727 15.0153Z"
-                        fill="#2F3035" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_58_20">
-                        <rect width="30" height="30" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                  <img class="social__img" src="images/icons/youtube.svg" width="30px" height="30px" alt="youtube">
                   <span class="sr-only">перейти в youtube</span>
                 </a>
               </li>
@@ -263,7 +184,7 @@
                     </div>
                     <span class="profile-menu__text">Согласен с условиями и положениями</span>
                   </label>
-                  <button class="profile-menu__btn" type="submit">
+                  <button class="profile-menu__btn btn" type="submit">
                     Зарегистрироваться
                   </button>
                 </form>
@@ -285,7 +206,7 @@
                     </div>
                     <span class="profile-menu__text">Запомнить</span>
                   </label>
-                  <button class="profile-menu__btn" type="submit">
+                  <button class="profile-menu__btn btn" type="submit">
                     Войти
                   </button>
                   <a class="profile-menu__lost" href="#">Забыли пароль?</a>
@@ -306,7 +227,7 @@
                 Твоя корзина пуста, но это никогда
                 не поздно исправить:)
               </p>
-              <a class="menu-catalog__next" href="#">
+              <a class="menu-catalog__next btn" href="#">
                 За покупками
               </a>
             </div>
@@ -418,7 +339,7 @@
                 <span class="menu-catalog__value">123 лей</span>
               </p>
               <div class="menu-catalog__link-box">
-                <a class="menu-catalog__link" href="#">Оформить заказ</a>
+                <a class="menu-catalog__link btn" href="#">Оформить заказ</a>
               </div>
             </div>
           </div>
@@ -435,7 +356,7 @@
                 Похоже тебе еще ничего не запало
                 в сердечко....
               </p>
-              <a class="menu-catalog__next" href="#">
+              <a class="menu-catalog__next btn" href="#">
                 За покупками
               </a>
             </div>
@@ -499,7 +420,7 @@
                 </li>
               </ul>
               <div class="menu-catalog__link-box">
-                <a class="menu-catalog__link" href="#">За покупками</a>
+                <a class="menu-catalog__link btn" href="#">За покупками</a>
               </div>
             </div>
           </div>
@@ -509,28 +430,28 @@
         <div class="container">
           <ul class="menu-categories">
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Салюты</a>
+              <a class="menu-categories__link link-line" href="shop.html">Салюты</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Миномёты</a>
+              <a class="menu-categories__link link-line" href="shop.html">Миномёты</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Римские свечи</a>
+              <a class="menu-categories__link link-line" href="shop.html">Римские свечи</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Ракеты</a>
+              <a class="menu-categories__link link-line" href="shop.html">Ракеты</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Фонтаны</a>
+              <a class="menu-categories__link link-line" href="shop.html">Фонтаны</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Цветной дым</a>
+              <a class="menu-categories__link link-line" href="shop.html">Цветной дым</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Хлопушки</a>
+              <a class="menu-categories__link link-line" href="shop.html">Хлопушки</a>
             </li>
             <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="#">Разное</a>
+              <a class="menu-categories__link link-line" href="shop.html">Разное</a>
             </li>
           </ul>
         </div>
@@ -540,35 +461,46 @@
 
   <main class="main">
 
-    <section class="breadcrumbs">
-      <h2 class="sr-only">Навигация по сайту</h2>
-      <div class="container">
-        <ul class="breadcrumbs__list">
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="index.html">Главная</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link link--disabled">Каталог товаров</a>
-          </li>
-        </ul>
+    <section class="hero section">
+      <div class="container-fluid">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link link--disabled">Каталог товаров</a>
+              </li>
+            </ul>
+            <div class="hero__info">
+              <h1 class="hero__title">
+                Каталог товаров
+              </h1>
+            </div>
+          </div>
+          <div class="hero__bg" style="background-image: url('images/decor/hero-bg-2.webp');"></div>
+        </div>
       </div>
     </section>
 
     <section class="shop">
       <div class="container">
         <div class="shop__nav">
-          <h1 class="shop__nav-title">
+          <h2 class="shop__nav-title">
             Каталог
-          </h1>
+          </h2>
           <form class="shop__nav-form" action="#">
             <button class="shop__nav-btn" type="button">
               <span class="sr-only">открыть фильтр меню</span>
             </button>
-            <select class="shop__filter-sort select-style">
-              <option value="default" selected>По популярности</option>
-              <option value="option1">Цена (по возрастающей)</option>
-              <option value="option2">Цена (по убыванию)</option>
-            </select>
+            <div class="shop__nav-select">
+              <select class="shop__filter-sort">
+                <option value="default" selected>По популярности</option>
+                <option value="option1">Цена (по возрастающей)</option>
+                <option value="option2">Цена (по убыванию)</option>
+              </select>
+            </div>
           </form>
         </div>
         <div class="shop__inner">
@@ -649,71 +581,80 @@
                 </label>
               </form>
             </li>
-            <li class="shop__filters-item">
+            <li class="shop__filters-item" data-gap="20">
               <h2 class="shop__title shop__title--shot">
                 Выстрелов
               </h2>
-              <form class="shop__filters-form shop__filters-range shop__filters-content" action="#">
-                <div class="shop__rangle-box">
-                  <span class="shop__filters-inner">
-                    от
-                    <input type="number" class="js-input-from-1 shop__filters-price" value="50">
-                    <span class="shop__filters-currency"></span>
-                  </span>
-                  <span class="shop__filters-inner">
-                    до
-                    <input type="number" class="js-input-to-1 shop__filters-price" value="150">
-                    <span class="shop__filters-currency"></span>
-                  </span>
+              <div class="slider-wrapper">
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="80">
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="160">
+                  </div>
                 </div>
-                <div class="range-slider">
-                  <input type="text" class="js-range-slider-1" value="">
+                <div class="slider">
+                  <div class="progress"></div>
                 </div>
-              </form>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="200" value="80" step="1">
+                  <input type="range" class="range-max" min="0" max="200" value="160" step="1">
+                </div>
+              </div>
             </li>
-            <li class="shop__filters-item">
+            <li class="shop__filters-item" data-gap="20">
               <h2 class="shop__title shop__title--time">
                 Длительность (с)
               </h2>
-              <form class="shop__filters-form shop__filters-range shop__filters-content" action="#">
-                <div class="shop__rangle-box">
-                  <span class="shop__filters-inner">
-                    от
-                    <input type="number" class="js-input-from-2 shop__filters-price" value="0">
-                    <span class="shop__filters-currency">с</span>
-                  </span>
-                  <span class="shop__filters-inner">
-                    до
-                    <input type="number" class="js-input-to-2 shop__filters-price" value="0">
-                    <span class="shop__filters-currency">с</span>
-                  </span>
+              <div class="slider-wrapper">
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="30">
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="90">
+                  </div>
                 </div>
-                <div class="range-slider">
-                  <input type="text" class="js-range-slider-2" value="">
+                <div class="slider">
+                  <div class="progress"></div>
                 </div>
-              </form>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="114" value="30" step="1">
+                  <input type="range" class="range-max" min="0" max="114" value="90" step="1">
+                </div>
+              </div>
             </li>
-            <li class="shop__filters-item">
+            <li class="shop__filters-item" data-gap="500">
               <h2 class="shop__title shop__title--price">
                 Цена
               </h2>
-              <form class="shop__filters-form shop__filters-range shop__filters-content" action="#">
-                <div class="shop__rangle-box">
-                  <span class="shop__filters-inner">
-                    от
-                    <input type="number" class="js-input-from-3 shop__filters-price" value="0">
-                    <span class="shop__filters-currency">L</span>
-                  </span>
-                  <span class="shop__filters-inner">
-                    до
-                    <input type="number" class="js-input-to-3 shop__filters-price" value="0">
-                    <span class="shop__filters-currency">L</span>
-                  </span>
+              <div class="slider-wrapper">
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="500">
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="3500">
+                  </div>
                 </div>
-                <div class="range-slider">
-                  <input type="text" class="js-range-slider-3" value="">
+                <div class="slider">
+                  <div class="progress"></div>
                 </div>
-              </form>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="5000" value="500" step="100">
+                  <input type="range" class="range-max" min="0" max="5000" value="3500" step="100">
+                </div>
+              </div>
             </li>
           </ul>
           <div class="shop__content">
@@ -740,7 +681,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-1.webp" alt="Absolute Zero">
+                      <img class="product-card__img" src="images/products/product-1.webp" width="200px" height="200px" alt="Absolute Zero">
                     </div>
                     <h3 class="product-card__title">
                       Absolute Zero
@@ -774,7 +715,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-2.webp" alt="Angry Tiger">
+                      <img class="product-card__img" src="images/products/product-2.webp" width="200px" height="200px" alt="Angry Tiger">
                     </div>
                     <h3 class="product-card__title">
                       Angry Tiger
@@ -808,7 +749,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-3.webp" alt="Цветной дым">
+                      <img class="product-card__img" src="images/products/product-3.webp" width="200px" height="200px" alt="Цветной дым">
                     </div>
                     <h3 class="product-card__title">
                       Цветной дым
@@ -841,7 +782,7 @@
                     <p class="product-card__hover-text">
                       посмотреть товар
                     </p>
-                    <div class="product-card__box"><img class="product-card__img" src="images/products/product-4.webp"
+                    <div class="product-card__box"><img class="product-card__img" src="images/products/product-4.webp" width="200px" height="200px"
                         alt="Red Devil">
                     </div>
                     <h3 class="product-card__title">
@@ -876,7 +817,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-5.webp" alt="Visionary">
+                      <img class="product-card__img" src="images/products/product-5.webp" width="200px" height="200px" alt="Visionary">
                     </div>
                     <h3 class="product-card__title">
                       Visionary
@@ -910,7 +851,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-6.webp" alt="Тортовая свеча">
+                      <img class="product-card__img" src="images/products/product-6.webp" width="200px" height="200px" alt="Тортовая свеча">
                     </div>
                     <h3 class="product-card__title">
                       Тортовая свеча
@@ -944,7 +885,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-7.webp" alt="Stroboscop Big">
+                      <img class="product-card__img" src="images/products/product-7.webp" width="200px" height="200px" alt="Stroboscop Big">
                     </div>
                     <h3 class="product-card__title">
                       Stroboscop Big
@@ -977,7 +918,7 @@
                     <p class="product-card__hover-text">
                       посмотреть товар
                     </p>
-                    <div class="product-card__box"><img class="product-card__img" src="images/products/product-8.webp"
+                    <div class="product-card__box"><img class="product-card__img" src="images/products/product-8.webp" width="200px" height="200px"
                         alt="Red Devil">
                     </div>
                     <h3 class="product-card__title">
@@ -1012,7 +953,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-9.webp" alt="Black Magic">
+                      <img class="product-card__img" src="images/products/product-9.webp" width="200px" height="200px" alt="Black Magic">
                     </div>
                     <h3 class="product-card__title">
                       Black Magic
@@ -1046,7 +987,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-10.webp" alt="Black Angel">
+                      <img class="product-card__img" src="images/products/product-10.webp" width="200px" height="200px" alt="Black Angel">
                     </div>
                     <h3 class="product-card__title">
                       Black Angel
@@ -1080,7 +1021,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-11.webp" alt="Bling">
+                      <img class="product-card__img" src="images/products/product-11.webp" width="200px" height="200px" alt="Bling">
                     </div>
                     <h3 class="product-card__title">
                       Bling
@@ -1114,7 +1055,7 @@
                       посмотреть товар
                     </p>
                     <div class="product-card__box">
-                      <img class="product-card__img" src="images/products/product-12.webp" alt="Roman Candle">
+                      <img class="product-card__img" src="images/products/product-12.webp" width="200px" height="200px" alt="Roman Candle">
                     </div>
                     <h3 class="product-card__title">
                       Roman Candle
@@ -1156,7 +1097,7 @@
       <div class="footer__top">
         <div class="footer__info">
           <a class="logo footer__logo" href="index.html">
-            <img class="logo__img" src="images/logo.webp" alt="логотип">
+            <img class="logo__img" width="165px" height="45px" src="images/logo.webp" alt="логотип">
           </a>
           <h2 class="footer__title">
             Поиск по сайту
@@ -1191,28 +1132,28 @@
             </h3>
             <ul class="footer__list">
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Салюты</a>
+                <a class="footer__link link" href="shop.html">Салюты</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Миномёты</a>
+                <a class="footer__link link" href="shop.html">Миномёты</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Римские свечи</a>
+                <a class="footer__link link" href="shop.html">Римские свечи</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Ракеты</a>
+                <a class="footer__link link" href="shop.html">Ракеты</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Фонтаны</a>
+                <a class="footer__link link" href="shop.html">Фонтаны</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Хлопушки</a>
+                <a class="footer__link link" href="shop.html">Хлопушки</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Разное</a>
+                <a class="footer__link link" href="shop.html">Разное</a>
               </li>
               <li class="footer__elem">
-                <a class="footer__link link" href="#">Цветной дым</a>
+                <a class="footer__link link" href="shop.html">Цветной дым</a>
               </li>
             </ul>
           </li>
@@ -1220,102 +1161,25 @@
         <ul class="social footer__social">
           <li class="social__item">
             <a class="social__link" href="https://www.instagram.com/artificiimaxsem.md/">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_1)">
-                  <path
-                    d="M15.0046 7.29749C10.7509 7.29749 7.30713 10.745 7.30713 14.995C7.30713 19.2487 10.7546 22.6925 15.0046 22.6925C19.2584 22.6925 22.7021 19.245 22.7021 14.995C22.7021 10.7412 19.2546 7.29749 15.0046 7.29749ZM15.0046 19.9912C12.2434 19.9912 10.0084 17.755 10.0084 14.995C10.0084 12.235 12.2446 9.99874 15.0046 9.99874C17.7646 9.99874 20.0009 12.235 20.0009 14.995C20.0021 17.755 17.7659 19.9912 15.0046 19.9912Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M21.1848 0.095454C18.4248 -0.033296 11.5885 -0.027046 8.82605 0.095454C6.39855 0.209204 4.2573 0.795454 2.53105 2.5217C-0.353954 5.4067 0.0147958 9.29421 0.0147958 14.9955C0.0147958 20.8305 -0.310204 24.628 2.53105 27.4692C5.4273 30.3642 9.37104 29.9855 15.0048 29.9855C20.7848 29.9855 22.7798 29.9892 24.8235 29.198C27.6023 28.1192 29.6998 25.6355 29.9048 21.1742C30.0348 18.413 30.0273 11.578 29.9048 8.81546C29.6573 3.5492 26.831 0.355454 21.1848 0.095454ZM25.5535 25.5605C23.6623 27.4517 21.0385 27.283 14.9685 27.283C8.71854 27.283 6.2123 27.3755 4.38355 25.5417C2.2773 23.4455 2.65855 20.0792 2.65855 14.9755C2.65855 8.0692 1.9498 3.09545 8.88105 2.74045C10.4735 2.6842 10.9423 2.66545 14.951 2.66545L15.0073 2.70295C21.6685 2.70295 26.8948 2.00545 27.2085 8.93545C27.2798 10.5167 27.296 10.9917 27.296 14.9942C27.2948 21.1717 27.4123 23.693 25.5535 25.5605Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M23.0077 8.79245C24.0012 8.79245 24.8065 7.98712 24.8065 6.9937C24.8065 6.00027 24.0012 5.19495 23.0077 5.19495C22.0143 5.19495 21.209 6.00027 21.209 6.9937C21.209 7.98712 22.0143 8.79245 23.0077 8.79245Z"
-                    fill="#2F3035" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_1">
-                    <rect width="30" height="30" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+              <img class="social__img" src="images/icons/instagram.svg" width="30px" height="30px" alt="instagram">
               <span class="sr-only">перейти в instagram</span>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link" href="https://vk.com/public58795950">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M24.8938 16.285C24.4088 15.6725 24.5475 15.4 24.8938 14.8525C24.9 14.8462 28.9037 9.31375 29.3162 7.4375L29.3188 7.43625C29.5238 6.7525 29.3188 6.25 28.3275 6.25H25.0475C24.2125 6.25 23.8275 6.68125 23.6213 7.16375C23.6213 7.16375 21.9513 11.1613 19.5887 13.7525C18.8263 14.5012 18.4738 14.7413 18.0575 14.7413C17.8525 14.7413 17.5338 14.5013 17.5338 13.8175V7.43625C17.5338 6.61625 17.3 6.25 16.6087 6.25H11.4513C10.9275 6.25 10.6163 6.6325 10.6163 6.98875C10.6163 7.76625 11.7975 7.945 11.92 10.1325V14.8787C11.92 15.9187 11.7312 16.11 11.3125 16.11C10.1975 16.11 7.49125 12.0962 5.8875 7.5025C5.56375 6.61125 5.2475 6.25125 4.40625 6.25125H1.125C0.18875 6.25125 0 6.6825 0 7.165C0 8.0175 1.115 12.2562 5.185 17.8562C7.8975 21.6788 11.7175 23.75 15.1925 23.75C17.2812 23.75 17.5363 23.29 17.5363 22.4988C17.5363 18.8463 17.3475 18.5012 18.3937 18.5012C18.8787 18.5012 19.7137 18.7413 21.6637 20.585C23.8925 22.7712 24.2588 23.75 25.5063 23.75H28.7862C29.7212 23.75 30.195 23.29 29.9225 22.3825C29.2987 20.4738 25.0838 16.5475 24.8938 16.285Z"
-                  fill="#2F3035" />
-              </svg>
+              <img class="social__img" src="images/icons/vk.svg" width="30px" height="30px" alt="vk">
               <span class="sr-only">перейти в vk</span>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link" href="https://www.facebook.com/MaxsemUrkaine/">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_7)">
-                  <path
-                    d="M17.4188 29.8048C17.2938 29.8252 17.1684 29.8439 17.0425 29.8611C17.1684 29.8439 17.2938 29.8252 17.4188 29.8048Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M17.7188 29.7535C17.659 29.7645 17.5993 29.7746 17.5396 29.7849C17.5993 29.7746 17.659 29.7645 17.7188 29.7535Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M16.7072 29.9027C16.5609 29.9192 16.4137 29.9338 16.2661 29.9462C16.4137 29.9338 16.5609 29.9192 16.7072 29.9027Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M16.9952 29.8674C16.9249 29.8768 16.8542 29.8855 16.7837 29.8938C16.8542 29.8855 16.9249 29.8768 16.9952 29.8674Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M18.1271 29.6725C18.0745 29.6837 18.0216 29.6949 17.9688 29.7057C18.0216 29.6949 18.0745 29.6837 18.1271 29.6725Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M19.1404 29.4207C19.0978 29.4328 19.0553 29.4442 19.0127 29.4561C19.0553 29.4442 19.0978 29.4328 19.1404 29.4207Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M18.834 29.5045C18.7878 29.5166 18.7413 29.529 18.6948 29.5407C18.7413 29.529 18.7878 29.5169 18.834 29.5045Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M18.433 29.6047C18.384 29.6162 18.3346 29.6269 18.2852 29.6379C18.3346 29.6269 18.384 29.6162 18.433 29.6047Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M16.2615 29.9467C16.1826 29.9533 16.1036 29.9592 16.0244 29.9645C16.1036 29.9592 16.1826 29.9533 16.2615 29.9467Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M30 15C30 6.717 23.283 0 15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C15.0881 30 15.1758 29.9982 15.2637 29.9966V18.3197H12.041V14.564H15.2637V11.8002C15.2637 8.59497 17.2204 6.85043 20.0796 6.85043C21.4487 6.85043 22.6257 6.95251 22.9688 6.99806V10.348H20.9972C19.4417 10.348 19.1405 11.0873 19.1405 12.1719V14.564H22.8598L22.375 18.3197H19.1405V29.4205C25.4102 27.6231 30 21.8468 30 15Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M15.9911 29.9666C15.835 29.9766 15.6782 29.9846 15.521 29.9899C15.6782 29.9846 15.835 29.9766 15.9911 29.9666Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M15.5127 29.9904C15.4298 29.9931 15.3468 29.9952 15.2637 29.9965C15.3468 29.9952 15.4298 29.9931 15.5127 29.9904Z"
-                    fill="#2F3035" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_7">
-                    <rect width="30" height="30" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+              <img class="social__img" src="images/icons/facebook.svg" width="30px" height="30px" alt="facebook">
               <span class="sr-only">перейти в facebook</span>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link" href="https://www.youtube.com/user/MaxsemFireworks">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_20)">
-                  <path d="M13.1318 17.8102L18.0111 15L13.1318 12.1898V17.8102Z" fill="#2F3035" />
-                  <path
-                    d="M15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C23.283 30 30 23.283 30 15C30 6.717 23.283 0 15 0ZM24.3727 15.0153C24.3727 15.0153 24.3727 18.0574 23.9868 19.5243C23.7705 20.3272 23.1374 20.9603 22.3345 21.1764C20.8676 21.5625 15 21.5625 15 21.5625C15 21.5625 9.14772 21.5625 7.66548 21.161C6.86256 20.945 6.22948 20.3117 6.01318 19.5087C5.62706 18.0574 5.62706 15 5.62706 15C5.62706 15 5.62706 11.9582 6.01318 10.4913C6.22925 9.68834 6.8779 9.03969 7.66548 8.82362C9.13239 8.4375 15 8.4375 15 8.4375C15 8.4375 20.8676 8.4375 22.3345 8.83896C23.1374 9.05502 23.7705 9.68834 23.9868 10.4913C24.3883 11.9582 24.3727 15.0153 24.3727 15.0153Z"
-                    fill="#2F3035" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_20">
-                    <rect width="30" height="30" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+              <img class="social__img" src="images/icons/youtube.svg" width="30px" height="30px" alt="youtube">
               <span class="sr-only">перейти в youtube</span>
             </a>
           </li>
@@ -1330,10 +1194,7 @@
   </footer>
 
   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/ion.rangeSlider.min.js"></script>
-  <script src="js/jquery.formstyler.min.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
 </body>
 
 </html>
