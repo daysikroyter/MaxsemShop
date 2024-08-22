@@ -1,0 +1,4 @@
+.wholesale__title,
+.wholesale__text:not(:last-child) {
+  margin-bottom: 15px;
+}
