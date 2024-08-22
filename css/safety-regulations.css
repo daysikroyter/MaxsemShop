@@ -1,0 +1,91 @@
+.regulations__box {
+  margin-bottom: 50px;
+}
+
+.regulations__box-title,
+.regulations__title,
+.regulations__taboo,
+.regulations__name {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.regulations__elem:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.regulations__title {
+  letter-spacing: 1px;
+  color: #c8a06c;
+  padding-left: 40px;
+  position: relative;
+}
+
+.regulations__title--last {
+  padding-left: 0;
+}
+
+.regulations__title--last::before {
+  display: none;
+}
+
+.regulations__title::before {
+  left: 0;
+  width: 25px;
+  height: 25px;
+}
+
+.regulations__title--firework::before {
+  background-image: url('../images/icons/wheels.png');
+}
+
+.regulations__title--rocket::before {
+  background-image: url('../images/icons/rocket.png');
+}
+
+.regulations__title--candle::before {
+  background-image: url('../images/icons/candle.svg');
+}
+
+.regulations__title--volcano::before {
+  background-image: url('../images/icons/volcano.svg');
+}
+
+.regulations__title--wheels::before {
+  background-image: url('../images/icons/firework.svg');
+}
+
+.regulations__text {
+  margin-bottom: 15px;
+}
+
+.regulations__text span {
+  font-weight: 500;
+  color: #fe3e57;
+}
+
+.regulations__taboo {
+  display: inline-block;
+  font-weight: 700;
+  color: #fe3e57;
+}
+
+.regulations__items {
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.regulations__name {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .regulations__elem:not(:last-child),
+  .regulations__box {
+    margin-bottom: 25px;
+  }
+
+  .regulations__title {
+    font-size: 20px;
+  }
+}
