@@ -772,3 +772,29 @@
 .menu-catalog__next {
   max-width: 400px;
 }
+
+.user-menu__btn:hover .heart-ico path {
+  fill: transparent;
+}
+
+.user-menu__btn path {
+  transition: fill 0.5s ease;
+}
+
+.user-menu__btn:hover path {
+  fill: #fff;
+}
+
+.user-menu__btn:active path {
+  fill: #2F3035;
+}
+
+.user-menu__btn:active .heart-ico path {
+  fill: transparent;
+}
+
+@media (max-width: 992px) {
+  .user-menu__btn:hover path {
+    fill: #2F3035;
+  }
+}
