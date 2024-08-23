@@ -1018,7 +1018,7 @@ input[type=search]::-webkit-search-submit-button {
   }
 
   .link-line:hover::before {
-    width: 0;
+    width: 100%;
   }
 
   .link:hover {
