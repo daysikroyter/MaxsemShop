@@ -155,7 +155,8 @@
                 </a>
               </li>
               <li class="social__item">
-                <a class="social__link" href="https://www.facebook.com/MaxsemUkraine/" target="_blank" rel="noopener noreferrer">
+                <a class="social__link" href="https://www.facebook.com/MaxsemUkraine/" target="_blank"
+                  rel="noopener noreferrer">
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_58_7)">
                       <path
@@ -225,75 +226,116 @@
               </li>
             </ul>
           </div>
+          <!-- этот блок переделал -->
           <div class="profile-menu">
             <button class="profile-menu__close" type="button">
               <span class="sr-only">закрыть меню</span>
             </button>
-            <ul class="profile-menu__items tabs">
-              <li class="profile-menu__item">
-                <a class="profile-menu__link tab tab--active link" href="#profile-tab-1">Регистрация</a>
-              </li>
-              <li class="profile-menu__item">
-                <a class="profile-menu__link tab link" href="#profile-tab-2">Вход</a>
-              </li>
-            </ul>
-            <ul class="tabs-container profile-menu__content">
-              <li id="profile-tab-1" class="tabs-content profile-menu__elem tabs-content--active">
-                <form class="profile-menu__form" action="#" style="min-height: 0;">
-                  <label class="profile-menu__label label">
-                    Имя пользователя или адрес электронной почты*
-                    <input class="profile-menu__input input" type="text" required>
-                  </label>
-                  <label class="profile-menu__label label">
-                    Пароль*
-                    <input class="profile-menu__input input" type="password" required>
-                  </label>
-                  <p class="profile-menu__text">
-                    Пароль будет отправлен на ваш адрес электронной почты.
-                  </p>
-                  <p class="profile-menu__text">
-                    Ваши персональные данные будут использоваться для поддержки вашего взаимодействия с данным
-                    веб-сайтом,
-                    для управления
-                    доступом к вашей учетной записи и для других целей, описанных в нашей политике конфиденциальности.
-                  </p>
-                  <label class="profile-menu__apply">
-                    <div class="profile-menu__box">
-                      <input class="profile-menu__checkbox-input" type="checkbox">
-                      <span class="profile-menu__checkbox"></span>
-                    </div>
-                    <span class="profile-menu__text">Согласен с условиями и положениями</span>
-                  </label>
-                  <button class="profile-menu__btn btn" type="submit">
-                    Зарегистрироваться
-                  </button>
-                </form>
-              </li>
-              <li id="profile-tab-2" class="tabs-content profile-menu__elem" style="min-height: 0;">
-                <form class="profile-menu__form" action="#">
-                  <label class="profile-menu__label label">
-                    Имя пользователя или адрес электронной почты*
-                    <input class="profile-menu__input input" type="text" required>
-                  </label>
-                  <label class="profile-menu__label label">
-                    Пароль*
-                    <input class="profile-menu__input input" type="password" required>
-                  </label>
-                  <label class="profile-menu__apply">
-                    <div class="profile-menu__box">
-                      <input class="profile-menu__checkbox-input" type="checkbox">
-                      <span class="profile-menu__checkbox"></span>
-                    </div>
-                    <span class="profile-menu__text">Запомнить</span>
-                  </label>
-                  <button class="profile-menu__btn btn" type="submit">
-                    Войти
-                  </button>
-                  <a class="profile-menu__lost" href="#">Забыли пароль?</a>
-                </form>
-              </li>
-            </ul>
+            <div class="profile-menu__auth-panel off">
+              <ul class="profile-menu__items tabs">
+                <li class="profile-menu__item">
+                  <a class="profile-menu__link tab tab--active link" href="#profile-tab-1">Регистрация</a>
+                </li>
+                <li class="profile-menu__item">
+                  <a class="profile-menu__link tab link" href="#profile-tab-2">Вход</a>
+                </li>
+              </ul>
+              <ul class="tabs-container profile-menu__content">
+                <li id="profile-tab-1" class="tabs-content profile-menu__elem tabs-content--active">
+                  <form class="profile-menu__form" action="#" style="min-height: 0;">
+                    <label class="profile-menu__label label">
+                      Имя пользователя или адрес электронной почты*
+                      <input class="profile-menu__input input" type="text" required>
+                    </label>
+                    <label class="profile-menu__label label">
+                      Пароль*
+                      <input class="profile-menu__input input" type="password" required>
+                    </label>
+                    <p class="profile-menu__text">
+                      Пароль будет отправлен на ваш адрес электронной почты.
+                    </p>
+                    <p class="profile-menu__text">
+                      Ваши персональные данные будут использоваться для поддержки вашего взаимодействия с данным
+                      веб-сайтом,
+                      для управления
+                      доступом к вашей учетной записи и для других целей, описанных в нашей политике конфиденциальности.
+                    </p>
+                    <label class="profile-menu__apply">
+                      <div class="profile-menu__box">
+                        <input class="profile-menu__checkbox-input" type="checkbox">
+                        <span class="profile-menu__checkbox"></span>
+                      </div>
+                      <span class="profile-menu__text">Согласен с условиями и положениями</span>
+                    </label>
+                    <button class="profile-menu__btn btn" type="submit">
+                      Зарегистрироваться
+                    </button>
+                  </form>
+                </li>
+                <li id="profile-tab-2" class="tabs-content profile-menu__elem" style="min-height: 0;">
+                  <form class="profile-menu__form" action="#">
+                    <label class="profile-menu__label label">
+                      Имя пользователя или адрес электронной почты*
+                      <input class="profile-menu__input input" type="text" required>
+                    </label>
+                    <label class="profile-menu__label label">
+                      Пароль*
+                      <input class="profile-menu__input input" type="password" required>
+                    </label>
+                    <label class="profile-menu__apply">
+                      <div class="profile-menu__box">
+                        <input class="profile-menu__checkbox-input" type="checkbox">
+                        <span class="profile-menu__checkbox"></span>
+                      </div>
+                      <span class="profile-menu__text">Запомнить</span>
+                    </label>
+                    <button class="profile-menu__btn btn" type="submit">
+                      Войти
+                    </button>
+                    <a class="profile-menu__lost" href="#">Забыли пароль?</a>
+                  </form>
+                </li>
+              </ul>
+            </div>
+            <div class="profile-menu__user on">
+              <div class="profile-menu__user-box">
+                <div class="profile-menu__img-box">
+                  <img class="profile-menu__img" src="images/icons/user-img.webp" alt="пользователь">
+                </div>
+              </div>
+              <span class="profile-menu__username">
+                Vladick Mustang
+              </span>
+              <strong class="profile-menu__title">
+                Общая информация:
+              </strong>
+              <dl class="profile-menu__list">
+                <div class="profile-menu__list-item profile-menu__list-item--phone">
+                  <dt>Номер телефона:</dt>
+                  <dd>+37363056098</dd>
+                </div>
+                <div class="profile-menu__list-item profile-menu__list-item--email">
+                  <dt>E-mail:</dt>
+                  <dd>info@maxsem.ua</dd>
+                </div>
+                <div class="profile-menu__list-item">
+                  <dt>Товаров в корзине: ..... </dt>
+                  <dd>4</dd>
+                </div>
+                <div class="profile-menu__list-item">
+                  <dt>Товаров в избранном: .....</dt>
+                  <dd>4</dd>
+                </div>
+              </dl>
+              <a class="btn profile-menu__edit" href="#">
+                Редактировать профиль
+              </a>
+              <button class="profile-menu__button" type="button">
+                Выход
+              </button>
+            </div>
           </div>
+          <!---->
           <div class="menu-catalog menu-catalog--basket">
             <button class="menu-button menu-catalog__btn menu-catalog__btn-basket" type="button">
               <span class="sr-only">закрыть меню</span>
@@ -2944,7 +2986,8 @@
         </ul>
         <ul class="social footer__social">
           <li class="social__item">
-            <a class="social__link" href="https://www.instagram.com/artificiimaxsem.md/" target="_blank" rel="noopener noreferrer">
+            <a class="social__link" href="https://www.instagram.com/artificiimaxsem.md/" target="_blank"
+              rel="noopener noreferrer">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_58_1)">
                   <path
@@ -2977,7 +3020,8 @@
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link" href="https://www.facebook.com/MaxsemUkraine/" target="_blank" rel="noopener noreferrer">
+            <a class="social__link" href="https://www.facebook.com/MaxsemUkraine/" target="_blank"
+              rel="noopener noreferrer">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_58_7)">
                   <path
@@ -3027,7 +3071,8 @@
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link" href="https://www.youtube.com/user/MaxsemFireworks" target="_blank" rel="noopener noreferrer">
+            <a class="social__link" href="https://www.youtube.com/user/MaxsemFireworks" target="_blank"
+              rel="noopener noreferrer">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_58_20)">
                   <path d="M13.1318 17.8102L18.0111 15L13.1318 12.1898V17.8102Z" fill="#2F3035" />

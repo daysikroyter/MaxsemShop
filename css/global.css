@@ -18,7 +18,12 @@ body::before,
 .shop__filters-btn::before,
 .shop__filters-btn::after,
 .dot-item::before,
-.regulations__title::before {
+.regulations__title::before,
+.profile-menu__img-box::before,
+.profile-menu__img-box::after,
+.profile-menu__button::before,
+.profile-menu__list-item--phone::before,
+.profile-menu__list-item--email::before {
   content: "";
   position: absolute;
   display: block;
@@ -29,7 +34,10 @@ body::before,
 .shop__title::before,
 .shop__nav-select::before,
 .shop__nav-btn::before,
-.regulations__title::before {
+.regulations__title::before,
+.profile-menu__button::before,
+.profile-menu__list-item--phone::before,
+.profile-menu__list-item--email::before {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -43,7 +51,12 @@ body::before,
 .showcase .slick-arrow,
 .shop__title::before,
 .dot-item::before,
-.regulations__title::before {
+.regulations__title::before,
+.profile-menu__img-box::before,
+.profile-menu__img-box::after,
+.profile-menu__button::before,
+.profile-menu__list-item--phone::before,
+.profile-menu__list-item--email::before {
   top: 50%;
   transform: translateY(-50%);
 }
