@@ -265,3 +265,60 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
 });
+
+document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
+  const rangeInputs = wrapper.querySelectorAll(".range-input input");
+  const priceInputs = wrapper.querySelectorAll(".price-input input");
+  const range = wrapper.querySelector(".slider .progress");
+  const priceGap = parseInt(wrapper.closest(".shop__filters-item").getAttribute("data-gap"), 10);
+
+  function updateProgress() {
+    let minVal = parseInt(rangeInputs[0].value),
+      maxVal = parseInt(rangeInputs[1].value);
+    const max = rangeInputs[0].max;
+    const min = rangeInputs[0].min;
+
+    const leftPercentage = ((minVal - min) / (max - min)) * 100;
+    const rightPercentage = 100 - ((maxVal - min) / (max - min)) * 100;
+
+    range.style.left = `${leftPercentage}%`;
+    range.style.right = `${rightPercentage}%`;
+  }
+
+  priceInputs.forEach(input => {
+    input.addEventListener("input", e => {
+      let minPrice = parseInt(priceInputs[0].value),
+        maxPrice = parseInt(priceInputs[1].value);
+
+      if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInputs[1].max) {
+        if (e.target.className === "input-min") {
+          rangeInputs[0].value = minPrice;
+        } else {
+          rangeInputs[1].value = maxPrice;
+        }
+        updateProgress();
+      }
+    });
+  });
+
+  rangeInputs.forEach(input => {
+    input.addEventListener("input", e => {
+      let minVal = parseInt(rangeInputs[0].value),
+        maxVal = parseInt(rangeInputs[1].value);
+
+      if ((maxVal - minVal) < priceGap) {
+        if (e.target.className === "range-min") {
+          rangeInputs[0].value = maxVal - priceGap;
+        } else {
+          rangeInputs[1].value = minVal + priceGap;
+        }
+      } else {
+        priceInputs[0].value = minVal;
+        priceInputs[1].value = maxVal;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+});
