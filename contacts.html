@@ -9,15 +9,16 @@
     content="Maxsem – это единственная международная пиротехническая компания на молдавском рынке." />
   <meta property="og:image" content="images/preview.webp" />
   <link rel="icon" href="images/icons/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Golos+Text:wght@400..900&display=swap"
+  rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/shop.css">
   <link rel="stylesheet" href="css/contacts.css">
   <link rel="stylesheet" href="css/footer.css">
   <title>Maxsem | Контакты</title>
@@ -25,519 +26,936 @@
 
 <body>
 
-  <header class="header section">
-    <nav class="menu">
-      <div class="container">
+  <header class="header">
+    <div class="container">
+      <nav class="menu">
         <div class="menu__top">
-          <a class="logo menu__logo" href="index.html">
-            <img class="logo__img" width="165px" height="45px" src="images/logo.webp" alt="логотип">
+          <button class="menu__btn" type="button">
+            <div class="menu__btn-line">
+              <span></span>
+            </div>
+            <span class="sr-only">открыть меню</span>
+          </button>
+          <button class="menu__btn-responsive" type="button">
+            <div class="menu__btn-line">
+              <span></span>
+            </div>
+            <span class="sr-only">открыть меню</span>
+          </button>
+          <a class="logo" href="index.html">
+            <img class="logo__img" src="images/logo.svg" alt="логотип">
           </a>
-          <ul class="menu__list">
-            <li class="menu__item">
-              <a class="menu__link link" href="about.html">О компании</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link link" href="wholesale.html">Опт</a>
-            </li>
-            <li class="menu__item">
-              <a class="menu__link link" href="contacts.html">Контакты</a>
-            </li>
-          </ul>
-          <ul class="user-menu">
+          <div class="box">
+            <a class="box__phone link" href="tel:+37379957152">
+              (+373) 79957152
+            </a>
+            <button class="box__phone-btn btn-default">
+              Заказать звонок
+            </button>
+          </div>
+          <search class="search">
+            <form class="search__form" action="#">
+              <input class="search__input" type="search" placeholder="Поиск по сайту">
+              <button class="search__btn" type="submit">
+                <span class="sr-only">поиск по сайту</span>
+              </button>
+            </form>
+          </search>
+          <ul class="header__user user-menu">
             <li class="user-menu__item">
-              <button class="user-menu__btn user-menu__btn--heart" type="button">
-                <svg class="heart-ico" xmlns="http://www.w3.org/2000/svg" width="28" height="22" viewBox="0 0 24 24">
+              <button class="user-menu__btn user-menu__btn--search">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" />
+                    d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                    stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16 16L20 20" stroke="#333333" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
                 </svg>
+                <span class="sr-only">поиск по сайту</span>
+              </button>
+            </li>
+            <li class="user-menu__item">
+              <button class="user-menu__btn user-menu__btn--heart">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 19C11 19 1 13.2727 1 6.31819C1.0002 5.08901 1.41665 3.89784 2.17855 2.94719C2.94044 1.99655 4.00074 1.34512 5.17919 1.10365C6.35764 0.862185 7.58148 1.04559 8.64265 1.62268C9.70383 2.19977 10.5368 3.13492 11 4.26915L11 4.26916C11.4632 3.13493 12.2962 2.19977 13.3573 1.62268C14.4185 1.04559 15.6424 0.862186 16.8208 1.10365C17.9993 1.34512 19.0596 1.99655 19.8215 2.94719C20.5833 3.89784 20.9998 5.08901 21 6.31819C21 13.2727 11 19 11 19Z"
+                    stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="user-menu__num">4</span>
                 <span class="sr-only">открыть избранное</span>
               </button>
             </li>
             <li class="user-menu__item">
-              <button class="user-menu__btn user-menu__btn--profile" type="button">
-                <svg class="user-ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                  fill="none">
+              <button class="user-menu__btn user-menu__btn--basket">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    d="M20.8225 18.096C17.3835 17.302 14.1825 16.606 15.7325 13.678C20.4525 4.766 16.9835 0 12.0005 0C6.91849 0 3.53649 4.949 8.26849 13.678C9.86549 16.623 6.54349 17.319 3.17849 18.096C0.105486 18.806 -0.00951398 20.332 0.000486018 23L0.00448602 24H23.9945L23.9985 23.031C24.0105 20.343 23.9065 18.809 20.8225 18.096Z"
-                    fill="#2F3035" />
+                    d="M11 7H6M6 7H1L2.5822 16.4932C2.82329 17.9398 4.07486 19 5.54138 19H16.4586C17.9251 19 19.1767 17.9398 19.4178 16.4932L21 7H16V6C16 3.23858 13.7614 1 11 1V1C8.23858 1 6 3.23858 6 6V7Z"
+                    stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <span class="sr-only">войти в аккаунт</span>
-              </button>
-            </li>
-            <li class="user-menu__item">
-              <button class="user-menu__btn user-menu__btn--basket" type="button">
-                <svg class="user-ico" width="30" height="23" viewBox="0 0 30 23" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M29.999 0L29.0703 2.5H26.659L22.3165 17.5H5.76777L-0.000976562 3.75H21.014L20.309 6.25H3.75902L7.43027 15H20.4653L24.7553 0H29.999ZM10.624 18.75C9.58902 18.75 8.74902 19.59 8.74902 20.625C8.74902 21.6612 9.58902 22.5 10.624 22.5C11.659 22.5 12.499 21.6612 12.499 20.625C12.499 19.59 11.659 18.75 10.624 18.75ZM19.249 10L16.874 18.75C15.839 18.75 14.999 19.5888 14.999 20.625C14.999 21.6612 15.839 22.5 16.874 22.5C17.909 22.5 18.749 21.6612 18.749 20.625C18.749 19.59 17.909 18.75 16.874 18.75L19.249 10Z"
-                    fill="#2F3035" />
-                </svg>
-                <span class="user-menu__circle">4</span>
+                <span class="user-menu__num">4</span>
                 <span class="sr-only">открыть корзину</span>
               </button>
             </li>
+            <li class="user-menu__item">
+              <button class="user-menu__btn user-menu__btn--profile">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14 1H8C3 1 1 3 1 8V14C1 17.78 2.14 19.85 4.86 20.62C5.08 18.02 7.75 15.97 11 15.97C14.25 15.97 16.92 18.02 17.14 20.62C19.86 19.85 21 17.78 21 14V8C21 3 19 1 14 1ZM11 13.17C9.02 13.17 7.42 11.56 7.42 9.58002C7.42 7.60002 9.02 6 11 6C12.98 6 14.58 7.60002 14.58 9.58002C14.58 11.56 12.98 13.17 11 13.17Z"
+                    stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Личный кабинет</span>
+              </button>
+            </li>
           </ul>
-          <button class="menu__btn" type="button">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span class="sr-only">открыть меню</span>
+          <ul class="localization__list">
+            <li class="localization__item">
+              <button class="localization__btn link localization__btn--active">
+                ru
+              </button>
+            </li>
+            <li class="localization__item">
+              <button class="localization__btn link">
+                ro
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="menu__content">
+          <search class="search menu__content-search">
+            <form class="search__form" action="#">
+              <input class="search__input" type="search" placeholder="Поиск по сайту">
+              <button class="search__btn" type="submit">
+                <span class="sr-only">поиск по сайту</span>
+              </button>
+            </form>
+          </search>
+          <ul class="menu__items">
+            <li class="menu__elem">
+              <a class="menu__linkage link" href="about.html">
+                О компании
+              </a>
+            </li>
+            <li class="menu__elem">
+              <a class="menu__linkage link" href="shop.html">
+                Каталог фейерверков
+              </a>
+            </li>
+            <li class="menu__elem">
+              <a class="menu__linkage link" href="#">
+                Праздники
+              </a>
+            </li>
+            <li class="menu__elem">
+              <a class="menu__linkage link" href="wholesale.html">
+                Опт быт
+              </a>
+            </li>
+            <li class="menu__elem">
+              <a class="menu__linkage link" href="#">
+                Доставка и возврат
+              </a>
+            </li>
+            <li class="menu__elem">
+              <a class="menu__linkage menu__linkage--active link" href="contacts.html">
+                Контакты
+              </a>
+            </li>
+          </ul>
+          <ul class="social">
+            <li class="social__item">
+              <a class="social__link link" href="https://vk.com/maxsem_fire" target="_blank" rel="noopener noreferrer">
+                ВКонтакте
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link link" href="https://www.youtube.com/user/maxsemrus" target="_blank"
+                rel="noopener noreferrer">
+                Youtube
+              </a>
+            </li>
+          </ul>
+          <ul class="menu__content-btns">
+            <li class="menu__btns-item">
+              <button class="menu__content-btn menu__content-btn--catalog" type="button">
+                <span class="menu__content-text menu__content-catalog">Каталог</span>
+              </button>
+            </li>
+            <li class="menu__btns-item">
+              <button class="menu__content-btn menu__content-btn--filter" type="button">
+                <span class="menu__content-text menu__content-filter">Фильтр</span>
+              </button>
+            </li>
+          </ul>
+          <div class="menu__categories-items">
+            <ul class="menu__categories">
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Салюты
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Миномёты
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Римские свечи
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Ракеты
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Фонтаны
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Цветной дым
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Хлопушки
+                </a>
+              </li>
+              <li class="menu__categories-item">
+                <a class="menu__categories__link" href="#">
+                  Разное
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__filters-items">
+            <div class="menu__filters-item shop__filters-item">
+              <h2 class="shop__title shop__title--caliber">
+                Калибр (мм)
+              </h2>
+              <form class="shop__filters-form shop__filters-form--checkbox shop__filters-content" action="#">
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">20</span>
+                </label>
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">20, 25, 30, 50</span>
+                </label>
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">25</span>
+                </label>
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">30</span>
+                </label>
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">40</span>
+                </label>
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">45</span>
+                </label>
+                <label class="shop__filters-label">
+                  <input class="shop__filters-input" type="checkbox">
+                  <span class="shop__filters-checkbox"></span>
+                  <span class="shop__filters-text">50</span>
+                </label>
+              </form>
+            </div>
+            <div class="menu__filters-item shop__filters-item" data-gap="20">
+              <h2 class="shop__title shop__title--shot">
+                Выстрелов
+              </h2>
+              <div class="slider-wrapper">
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="40">
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="160">
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="progress" style="left: 20%; right: 20%;"></div>
+                </div>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="200" value="40" step="1">
+                  <input type="range" class="range-max" min="0" max="200" value="160" step="1">
+                </div>
+              </div>
+            </div>
+            <div class="menu__filters-item shop__filters-item" data-gap="20">
+              <h2 class="shop__title shop__title--time">
+                Длительность (с)
+              </h2>
+              <div class="slider-wrapper">
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="20">
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="90">
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="progress" style="left: 17.5439%; right: 21.0526%;"></div>
+                </div>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="114" value="20" step="1">
+                  <input type="range" class="range-max" min="0" max="114" value="90" step="1">
+                </div>
+              </div>
+            </div>
+            <div class="menu__filters-item shop__filters-item" data-gap="500">
+              <h2 class="shop__title shop__title--price">
+                Цена
+              </h2>
+              <div class="slider-wrapper">
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="900">
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="4000">
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="progress" style="left: 18%; right: 20%;"></div>
+                </div>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="5000" value="900" step="100">
+                  <input type="range" class="range-max" min="0" max="5000" value="4000" step="100">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="menu-responsive">
+      <button class="menu-responsive__close" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M17 17L7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span class="sr-only">закрыть меню</span>
+      </button>
+      <div class="menu-responsive__inner">
+        <div class="menu-responsive__phone-box">
+          <a class="menu-responsive__phone" href="tel:+37379957152">
+            (+373) 79957152
+          </a>
+        </div>
+        <ul class="user-menu menu-responsive__user">
+          <li class="user-menu__item menu-responsive__user-item">
+            <button class="user-menu__btn user-menu__btn--heart menu-responsive__btn">
+              <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 19C11 19 1 13.2727 1 6.31819C1.0002 5.08901 1.41665 3.89784 2.17855 2.94719C2.94044 1.99655 4.00074 1.34512 5.17919 1.10365C6.35764 0.862185 7.58148 1.04559 8.64265 1.62268C9.70383 2.19977 10.5368 3.13492 11 4.26915L11 4.26916C11.4632 3.13493 12.2962 2.19977 13.3573 1.62268C14.4185 1.04559 15.6424 0.862186 16.8208 1.10365C17.9993 1.34512 19.0596 1.99655 19.8215 2.94719C20.5833 3.89784 20.9998 5.08901 21 6.31819C21 13.2727 11 19 11 19Z"
+                  stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="user-menu__text menu-responsive__text">
+                Избранное
+              </span>
+              <span class="user-menu__num menu-responsive__num">4</span>
+              <span class="sr-only">открыть избранное</span>
+            </button>
+          </li>
+          <li class="user-menu__item menu-responsive__user-item">
+            <button class="user-menu__btn user-menu__btn--basket menu-responsive__btn">
+              <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 7H6M6 7H1L2.5822 16.4932C2.82329 17.9398 4.07486 19 5.54138 19H16.4586C17.9251 19 19.1767 17.9398 19.4178 16.4932L21 7H16V6C16 3.23858 13.7614 1 11 1V1C8.23858 1 6 3.23858 6 6V7Z"
+                  stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="user-menu__text menu-responsive__text">
+                Корзина
+              </span>
+              <span class="user-menu__num menu-responsive__num">4</span>
+              <span class="sr-only">открыть корзину</span>
+            </button>
+          </li>
+          <li class="user-menu__item menu-responsive__user-item">
+            <button class="user-menu__btn user-menu__btn--profile menu-responsive__btn">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 1H8C3 1 1 3 1 8V14C1 17.78 2.14 19.85 4.86 20.62C5.08 18.02 7.75 15.97 11 15.97C14.25 15.97 16.92 18.02 17.14 20.62C19.86 19.85 21 17.78 21 14V8C21 3 19 1 14 1ZM11 13.17C9.02 13.17 7.42 11.56 7.42 9.58002C7.42 7.60002 9.02 6 11 6C12.98 6 14.58 7.60002 14.58 9.58002C14.58 11.56 12.98 13.17 11 13.17Z"
+                  stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="menu-responsive__text">Личный кабинет</span>
+            </button>
+          </li>
+        </ul>
+        <a class="menu-responsive__catalog" href="shop.html">
+          Каталог фейерверков
+        </a>
+        <ul class="menu-responsive__list">
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link" href="about.html">
+              О компании
+            </a>
+          </li>
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link" href="#">
+              Праздники
+            </a>
+          </li>
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link" href="wholesale.html">
+              Опт быт
+            </a>
+          </li>
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link" href="#">
+              Доставка и возврат
+            </a>
+          </li>
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link menu-responsive__link--active" href="contacts.html">
+              Контакты
+            </a>
+          </li>
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link" href="https://vk.com/maxsem_fire" target="_blank" rel="noopener noreferrer">
+              ВКонтакте
+            </a>
+          </li>
+          <li class="menu-responsive__item">
+            <a class="menu-responsive__link" href="https://www.youtube.com/user/maxsemrus" target="_blank"
+              rel="noopener noreferrer">
+              Youtube
+            </a>
+          </li>
+        </ul>
+        <div class="menu-responsive__box">
+          <a class="menu-responsive__email" href="mailto:info@maxsem.ro">
+            info@maxsem.ro
+          </a>
+          <button class="box__phone-btn btn-default menu-responsive__popup">
+            Заказать звонок
           </button>
-          <div class="menu-burger">
-            <div class="menu-burger__box">
-              <a class="logo" href="index.html">
-                <img class="logo__img" width="165px" height="45px" src="images/logo.webp" alt="логотип">
-              </a>
-            </div>
-            <button class="menu-burger__btn" type="button">
-              <span class="menu-burger__btn-line"></span>
-              <span class="menu-burger__btn-line"></span>
-              <span class="sr-only">закрыть меню</span>
+        </div>
+        <ul class="menu-responsive__localization localization__list">
+          <li class="localization__item">
+            <button class="localization__btn link localization__btn--active">
+              ru
             </button>
+          </li>
+          <li class="localization__item">
+            <button class="localization__btn link">
+              ro
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-burger">
+      <div class="container">
+        <ul class="menu-burger__items">
+          <li class="menu-burger__item">
+            <strong class="menu-burger__title">
+              Компания
+            </strong>
             <ul class="menu-burger__list">
-              <li class="menu-burger__item">
-                <a class="menu-burger__link link" href="about.html">О компании</a>
+              <li class="menu-burger__elem">
+                <a class="menu-burger__link link" href="about.html">
+                  О компании
+                </a>
               </li>
-              <li class="menu-burger__item">
-                <a class="menu-burger__link link" href="wholesale.html">Опт</a>
+              <li class="menu-burger__elem">
+                <a class="menu-burger__link link" href="wholesale.html">
+                  Оптовым покупателям
+                </a>
               </li>
-              <li class="menu-burger__item">
-                <a class="menu-burger__link link" href="contacts.html">Контакты</a>
+              <li class="menu-burger__elem">
+                <a class="menu-burger__link link" href="#">
+                  Доставка и возврат
+                </a>
               </li>
-            </ul>
-            <address class="address">
-              <ul class="address__list">
-                <li class="address__item">
-                  <a class="address__link address__link--location link--disabled">Ул.
-                    Алексея Щусева 56/1</a>
+              <li class="menu-burger__elem">
+                <a class="menu-burger__link link" href="contacts.html">
+                  Контакты
+                </a>
+              </li>
+              <li class="menu-burger__elem">
+                <a class="menu-burger__link link" href="#">
+                  Блог
+                </a>
+              </li>
+              <ul class="menu-burger__social">
+                <li class="menu-burger__social-item">
+                  <a class="menu-burger__link link" href="https://vk.com/maxsem_fire" target="_blank"
+                    rel="noopener noreferrer">
+                    ВКонтакте
+                  </a>
                 </li>
-                <li class="address__item">
-                  <a class="address__link address__link--phone" href="tel:+37379957152">(+373) 79957152</a>
-                </li>
-                <li class="address__item">
-                  <a class="address__link address__link--email" href="mailto:info@maxsem.ro">info@maxsem.ro</a>
+                <li class="menu-burger__social-item">
+                  <a class="menu-burger__link link" href="https://www.youtube.com/user/maxsemrus" target="_blank"
+                    rel="noopener noreferrer">
+                    Youtube
+                  </a>
                 </li>
               </ul>
-            </address>
-            <ul class="social menu-burger__social">
-              <li class="social__item">
-                <a class="social__link" href="https://www.instagram.com/artificiimaxsem.md/" target="_blank"
-                  rel="noopener noreferrer">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_58_1)">
-                      <path
-                        d="M15.0046 7.29749C10.7509 7.29749 7.30713 10.745 7.30713 14.995C7.30713 19.2487 10.7546 22.6925 15.0046 22.6925C19.2584 22.6925 22.7021 19.245 22.7021 14.995C22.7021 10.7412 19.2546 7.29749 15.0046 7.29749ZM15.0046 19.9912C12.2434 19.9912 10.0084 17.755 10.0084 14.995C10.0084 12.235 12.2446 9.99874 15.0046 9.99874C17.7646 9.99874 20.0009 12.235 20.0009 14.995C20.0021 17.755 17.7659 19.9912 15.0046 19.9912Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M21.1848 0.095454C18.4248 -0.033296 11.5885 -0.027046 8.82605 0.095454C6.39855 0.209204 4.2573 0.795454 2.53105 2.5217C-0.353954 5.4067 0.0147958 9.29421 0.0147958 14.9955C0.0147958 20.8305 -0.310204 24.628 2.53105 27.4692C5.4273 30.3642 9.37104 29.9855 15.0048 29.9855C20.7848 29.9855 22.7798 29.9892 24.8235 29.198C27.6023 28.1192 29.6998 25.6355 29.9048 21.1742C30.0348 18.413 30.0273 11.578 29.9048 8.81546C29.6573 3.5492 26.831 0.355454 21.1848 0.095454ZM25.5535 25.5605C23.6623 27.4517 21.0385 27.283 14.9685 27.283C8.71854 27.283 6.2123 27.3755 4.38355 25.5417C2.2773 23.4455 2.65855 20.0792 2.65855 14.9755C2.65855 8.0692 1.9498 3.09545 8.88105 2.74045C10.4735 2.6842 10.9423 2.66545 14.951 2.66545L15.0073 2.70295C21.6685 2.70295 26.8948 2.00545 27.2085 8.93545C27.2798 10.5167 27.296 10.9917 27.296 14.9942C27.2948 21.1717 27.4123 23.693 25.5535 25.5605Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M23.0077 8.79245C24.0012 8.79245 24.8065 7.98712 24.8065 6.9937C24.8065 6.00027 24.0012 5.19495 23.0077 5.19495C22.0143 5.19495 21.209 6.00027 21.209 6.9937C21.209 7.98712 22.0143 8.79245 23.0077 8.79245Z"
-                        fill="#2F3035" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_58_1">
-                        <rect width="30" height="30" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="sr-only">перейти в instagram</span>
+            </ul>
+          </li>
+          <li class="menu-burger__item">
+            <strong class="menu-burger__title">
+              Каталог фейерверков
+            </strong>
+            <ul class="menu-burger__list-items">
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Пиротехническая продукция
                 </a>
               </li>
-              <li class="social__item">
-                <a class="social__link" href="https://vk.com/public58795950" target="_blank" rel="noopener noreferrer">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M24.8938 16.285C24.4088 15.6725 24.5475 15.4 24.8938 14.8525C24.9 14.8462 28.9037 9.31375 29.3162 7.4375L29.3188 7.43625C29.5238 6.7525 29.3188 6.25 28.3275 6.25H25.0475C24.2125 6.25 23.8275 6.68125 23.6213 7.16375C23.6213 7.16375 21.9513 11.1613 19.5887 13.7525C18.8263 14.5012 18.4738 14.7413 18.0575 14.7413C17.8525 14.7413 17.5338 14.5013 17.5338 13.8175V7.43625C17.5338 6.61625 17.3 6.25 16.6087 6.25H11.4513C10.9275 6.25 10.6163 6.6325 10.6163 6.98875C10.6163 7.76625 11.7975 7.945 11.92 10.1325V14.8787C11.92 15.9187 11.7312 16.11 11.3125 16.11C10.1975 16.11 7.49125 12.0962 5.8875 7.5025C5.56375 6.61125 5.2475 6.25125 4.40625 6.25125H1.125C0.18875 6.25125 0 6.6825 0 7.165C0 8.0175 1.115 12.2562 5.185 17.8562C7.8975 21.6788 11.7175 23.75 15.1925 23.75C17.2812 23.75 17.5363 23.29 17.5363 22.4988C17.5363 18.8463 17.3475 18.5012 18.3937 18.5012C18.8787 18.5012 19.7137 18.7413 21.6637 20.585C23.8925 22.7712 24.2588 23.75 25.5063 23.75H28.7862C29.7212 23.75 30.195 23.29 29.9225 22.3825C29.2987 20.4738 25.0838 16.5475 24.8938 16.285Z"
-                      fill="#2F3035" />
-                  </svg>
-                  <span class="sr-only">перейти в vk</span>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Батареи салютов
                 </a>
               </li>
-              <li class="social__item">
-                <a class="social__link" href="https://www.facebook.com/MaxsemUkraine/" target="_blank"
-                  rel="noopener noreferrer">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_58_7)">
-                      <path
-                        d="M17.4188 29.8048C17.2938 29.8252 17.1684 29.8439 17.0425 29.8611C17.1684 29.8439 17.2938 29.8252 17.4188 29.8048Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M17.7188 29.7535C17.659 29.7645 17.5993 29.7746 17.5396 29.7849C17.5993 29.7746 17.659 29.7645 17.7188 29.7535Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M16.7072 29.9027C16.5609 29.9192 16.4137 29.9338 16.2661 29.9462C16.4137 29.9338 16.5609 29.9192 16.7072 29.9027Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M16.9952 29.8674C16.9249 29.8768 16.8542 29.8855 16.7837 29.8938C16.8542 29.8855 16.9249 29.8768 16.9952 29.8674Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M18.1271 29.6725C18.0745 29.6837 18.0216 29.6949 17.9688 29.7057C18.0216 29.6949 18.0745 29.6837 18.1271 29.6725Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M19.1404 29.4207C19.0978 29.4328 19.0553 29.4442 19.0127 29.4561C19.0553 29.4442 19.0978 29.4328 19.1404 29.4207Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M18.834 29.5045C18.7878 29.5166 18.7413 29.529 18.6948 29.5407C18.7413 29.529 18.7878 29.5169 18.834 29.5045Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M18.433 29.6047C18.384 29.6162 18.3346 29.6269 18.2852 29.6379C18.3346 29.6269 18.384 29.6162 18.433 29.6047Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M16.2615 29.9467C16.1826 29.9533 16.1036 29.9592 16.0244 29.9645C16.1036 29.9592 16.1826 29.9533 16.2615 29.9467Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M30 15C30 6.717 23.283 0 15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C15.0881 30 15.1758 29.9982 15.2637 29.9966V18.3197H12.041V14.564H15.2637V11.8002C15.2637 8.59497 17.2204 6.85043 20.0796 6.85043C21.4487 6.85043 22.6257 6.95251 22.9688 6.99806V10.348H20.9972C19.4417 10.348 19.1405 11.0873 19.1405 12.1719V14.564H22.8598L22.375 18.3197H19.1405V29.4205C25.4102 27.6231 30 21.8468 30 15Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M15.9911 29.9666C15.835 29.9766 15.6782 29.9846 15.521 29.9899C15.6782 29.9846 15.835 29.9766 15.9911 29.9666Z"
-                        fill="#2F3035" />
-                      <path
-                        d="M15.5127 29.9904C15.4298 29.9931 15.3468 29.9952 15.2637 29.9965C15.3468 29.9952 15.4298 29.9931 15.5127 29.9904Z"
-                        fill="#2F3035" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_58_7">
-                        <rect width="30" height="30" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="sr-only">перейти в facebook</span>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Товары для праздника
                 </a>
               </li>
-              <li class="social__item">
-                <a class="social__link" href="https://www.youtube.com/user/MaxsemFireworks" target="_blank"
-                  rel="noopener noreferrer">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_58_20)">
-                      <path d="M13.1318 17.8102L18.0111 15L13.1318 12.1898V17.8102Z" fill="#2F3035" />
-                      <path
-                        d="M15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C23.283 30 30 23.283 30 15C30 6.717 23.283 0 15 0ZM24.3727 15.0153C24.3727 15.0153 24.3727 18.0574 23.9868 19.5243C23.7705 20.3272 23.1374 20.9603 22.3345 21.1764C20.8676 21.5625 15 21.5625 15 21.5625C15 21.5625 9.14772 21.5625 7.66548 21.161C6.86256 20.945 6.22948 20.3117 6.01318 19.5087C5.62706 18.0574 5.62706 15 5.62706 15C5.62706 15 5.62706 11.9582 6.01318 10.4913C6.22925 9.68834 6.8779 9.03969 7.66548 8.82362C9.13239 8.4375 15 8.4375 15 8.4375C15 8.4375 20.8676 8.4375 22.3345 8.83896C23.1374 9.05502 23.7705 9.68834 23.9868 10.4913C24.3883 11.9582 24.3727 15.0153 24.3727 15.0153Z"
-                        fill="#2F3035" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_58_20">
-                        <rect width="30" height="30" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="sr-only">перейти в youtube</span>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Летающие фейерверки
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Петарды
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Римские свечи
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Фестивальные шары
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Фонтаны
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Наборы ракет
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Цветной дым
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Фонтаны в торт
+                </a>
+              </li>
+              <li class="menu-burger__comp">
+                <a class="menu-burger__linkage link" href="#">
+                  Бенгальские огни
                 </a>
               </li>
             </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="phone-popup">
+      <button class="phone-popup__close" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 17L17 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M17 17L7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span class="sr-only">закрыть окно</span>
+      </button>
+      <strong class="phone-popup__title">
+        Заказ обратного звонка
+      </strong>
+      <p class="phone-popup__text">
+        Оставьте свои контактные данные, в ближайшее время мы свяжемся с Вами и ответим на все вопросы.
+      </p>
+      <form class="form" action="#">
+        <label class="form__label">
+          <span class="form__label-text">Ваше имя</span>
+          <input class="form__input" type="text" required>
+        </label>
+        <label class="form__label">
+          <span class="form__label-text">Телефон</span>
+          <input class="form__input" type="tel" required>
+        </label>
+        <label class="form__apply">
+          <div class="form__box">
+            <input class="form__checkbox-input" type="checkbox">
+            <span class="form__checkbox"></span>
           </div>
-          <div class="profile-menu">
-            <button class="profile-menu__close" type="button">
-              <span class="sr-only">закрыть меню</span>
-            </button>
-            <ul class="profile-menu__items tabs">
-              <li class="profile-menu__item">
-                <a class="profile-menu__link tab tab--active link" href="#profile-tab-1">Регистрация</a>
-              </li>
-              <li class="profile-menu__item">
-                <a class="profile-menu__link tab link" href="#profile-tab-2">Вход</a>
-              </li>
-            </ul>
-            <ul class="tabs-container profile-menu__content">
-              <li id="profile-tab-1" class="tabs-content profile-menu__elem tabs-content--active">
-                <form class="profile-menu__form" action="#" style="min-height: 0;">
-                  <label class="profile-menu__label label">
-                    Имя пользователя или адрес электронной почты*
-                    <input class="profile-menu__input input" type="text" required>
-                  </label>
-                  <label class="profile-menu__label label">
-                    Пароль*
-                    <input class="profile-menu__input input" type="password" required>
-                  </label>
-                  <p class="profile-menu__text">
-                    Пароль будет отправлен на ваш адрес электронной почты.
-                  </p>
-                  <p class="profile-menu__text">
-                    Ваши персональные данные будут использоваться для поддержки вашего взаимодействия с данным
-                    веб-сайтом,
-                    для управления
-                    доступом к вашей учетной записи и для других целей, описанных в нашей политике конфиденциальности.
-                  </p>
-                  <label class="profile-menu__apply">
-                    <div class="profile-menu__box">
-                      <input class="profile-menu__checkbox-input" type="checkbox">
-                      <span class="profile-menu__checkbox"></span>
-                    </div>
-                    <span class="profile-menu__text">Согласен с условиями и положениями</span>
-                  </label>
-                  <button class="profile-menu__btn btn" type="submit">
-                    Зарегистрироваться
-                  </button>
-                </form>
-              </li>
-              <li id="profile-tab-2" class="tabs-content profile-menu__elem" style="min-height: 0;">
-                <form class="profile-menu__form" action="#">
-                  <label class="profile-menu__label label">
-                    Имя пользователя или адрес электронной почты*
-                    <input class="profile-menu__input input" type="text" required>
-                  </label>
-                  <label class="profile-menu__label label">
-                    Пароль*
-                    <input class="profile-menu__input input" type="password" required>
-                  </label>
-                  <label class="profile-menu__apply">
-                    <div class="profile-menu__box">
-                      <input class="profile-menu__checkbox-input" type="checkbox">
-                      <span class="profile-menu__checkbox"></span>
-                    </div>
-                    <span class="profile-menu__text">Запомнить</span>
-                  </label>
-                  <button class="profile-menu__btn btn" type="submit">
-                    Войти
-                  </button>
-                  <a class="profile-menu__lost" href="#">Забыли пароль?</a>
-                </form>
-              </li>
-            </ul>
-          </div>
-          <div class="menu-catalog menu-catalog--basket">
-            <button class="menu-button menu-catalog__btn menu-catalog__btn-basket" type="button">
-              <span class="sr-only">закрыть меню</span>
-            </button>
-            <span class="menu-catalog__name">
-              Корзина
+          <div class="form__box-info">
+            <span class="form__text">
+              Подтверждаю, что мне больше 16 лет, и даю свое согласие на законную обработку персональных данных.
             </span>
-            <div class="menu-catalog__empty off">
-              <img class="menu-catalog__empty-img" src="images/icons/basket-empty.svg" alt="пустая корзина">
-              <p class="menu-catalog__text">
-                Твоя корзина пуста, но это никогда
-                не поздно исправить:)
-              </p>
-              <a class="menu-catalog__next btn" href="shop.html">
-                За покупками
-              </a>
-            </div>
-            <div class="menu-catalog__full on">
-              <ul class="menu-catalog__products">
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-1.webp" alt="Absolute Zero">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Absolute Zero
-                    </a>
-                    <span class="menu-catalog__price price">1978 лей</span>
-                    <div class="input-field" min="" max="" step="1" value="0">
-                      <button class="input-field__button minus" type="button">
-                        <span class="sr-only">уменьшить количество товара</span>
-                      </button>
-                      <div class="input-field__number-value">
-                        <span class="input-field__number">5</span>
-                      </div>
-                      <button class="input-field__button plus" type="button">
-                        <span class="sr-only">увеличить количество товара</span>
-                      </button>
-                    </div>
-                  </div>
-                  <button class="menu-catalog__delete" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-2.webp" alt="Angry Tiger">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Angry Tiger
-                    </a>
-                    <span class="menu-catalog__price price">324 лей</span>
-                    <div class="input-field" min="" max="" step="1" value="0">
-                      <button class="input-field__button minus" type="button">
-                        <span class="sr-only">уменьшить количество товара</span>
-                      </button>
-                      <div class="input-field__number-value">
-                        <span class="input-field__number">3</span>
-                      </div>
-                      <button class="input-field__button plus" type="button">
-                        <span class="sr-only">увеличить количество товара</span>
-                      </button>
-                    </div>
-                  </div>
-                  <button class="menu-catalog__delete" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-3.webp" alt="Цветной дым">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Цветной дым
-                    </a>
-                    <span class="menu-catalog__price price">145 лей</span>
-                    <div class="input-field" min="" max="" step="1" value="0">
-                      <button class="input-field__button minus" type="button">
-                        <span class="sr-only">уменьшить количество товара</span>
-                      </button>
-                      <div class="input-field__number-value">
-                        <span class="input-field__number">1</span>
-                      </div>
-                      <button class="input-field__button plus" type="button">
-                        <span class="sr-only">увеличить количество товара</span>
-                      </button>
-                    </div>
-                  </div>
-                  <button class="menu-catalog__delete" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-4.webp" alt="Red Devil">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Red Devil
-                    </a>
-                    <span class="menu-catalog__price price">256 лей</span>
-                    <div class="input-field" min="" max="" step="1" value="0">
-                      <button class="input-field__button minus" type="button">
-                        <span class="sr-only">уменьшить количество товара</span>
-                      </button>
-                      <div class="input-field__number-value">
-                        <span class="input-field__number">7</span>
-                      </div>
-                      <button class="input-field__button plus" type="button">
-                        <span class="sr-only">увеличить количество товара</span>
-                      </button>
-                    </div>
-                  </div>
-                  <button class="menu-catalog__delete" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-              </ul>
-              <p class="menu-catalog__cost">
-                Сумма заказа: . . . . . .
-                <span class="menu-catalog__value">123 лей</span>
-              </p>
-              <div class="menu-catalog__link-box">
-                <a class="menu-catalog__link btn" href="order.html">Оформить заказ</a>
-              </div>
-            </div>
+            <a class="form__link" href="#">
+              Обработка персональных данных
+            </a>
           </div>
-          <div class="menu-catalog menu-catalog--heart">
-            <button class="menu-button menu-catalog__btn menu-catalog__btn-heart" type="button">
-              <span class="sr-only">закрыть меню</span>
+        </label>
+        <button class="form__btn btn" type="submit">
+          Заказать звонок
+        </button>
+      </form>
+    </div>
+    <div class="menu-catalog menu-catalog--heart">
+      <button class="menu-button menu-catalog__btn menu-catalog__btn-heart" type="button">
+        <span class="sr-only">закрыть меню</span>
+      </button>
+      <span class="menu-catalog__name">
+        Избранное
+      </span>
+      <div class="menu-catalog__empty off">
+        <img class="menu-catalog__empty-img" src="images/icons/double-heart.svg" alt="heart">
+        <p class="menu-catalog__text">
+          Похоже тебе еще ничего не запало
+          в сердечко....
+        </p>
+        <a class="menu-catalog__next btn" href="shop.html">
+          За покупками
+        </a>
+      </div>
+      <div class="menu-catalog__full on">
+        <ul class="menu-catalog__products menu-catalog__products--heart">
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-1.webp" alt="Absolute Zero">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Absolute Zero
+              </a>
+              <span class="menu-catalog__price price">1978 лей</span>
+            </div>
+            <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
+              <span class="sr-only">удалить товар</span>
             </button>
-            <span class="menu-catalog__name">
-              Избранное
-            </span>
-            <div class="menu-catalog__empty off">
-              <img class="menu-catalog__empty-img" src="images/icons/double-heart.svg" alt="heart">
-              <p class="menu-catalog__text">
-                Похоже тебе еще ничего не запало
-                в сердечко....
-              </p>
-              <a class="menu-catalog__next btn" href="shop.html">
-                За покупками
+          </li>
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-2.webp" alt="Angry Tiger">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Angry Tiger
               </a>
+              <span class="menu-catalog__price price">324 лей</span>
             </div>
-            <div class="menu-catalog__full on">
-              <ul class="menu-catalog__products menu-catalog__products--heart">
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-1.webp" alt="Absolute Zero">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Absolute Zero
-                    </a>
-                    <span class="menu-catalog__price price">1978 лей</span>
-                  </div>
-                  <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-2.webp" alt="Angry Tiger">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Angry Tiger
-                    </a>
-                    <span class="menu-catalog__price price">324 лей</span>
-                  </div>
-                  <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-3.webp" alt="Цветной дым">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Цветной дым
-                    </a>
-                    <span class="menu-catalog__price price">145 лей</span>
-                  </div>
-                  <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-                <li class="menu-catalog__product">
-                  <a class="menu-catalog__img-link" href="#">
-                    <img class="menu-catalog__img" src="images/products/product-4.webp" alt="Red Devil">
-                  </a>
-                  <div class="menu-catalog__info">
-                    <a class="menu-catalog__product-name" href="#">
-                      Red Devil
-                    </a>
-                    <span class="menu-catalog__price price">256 лей</span>
-                  </div>
-                  <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
-                    <span class="sr-only">удалить товар</span>
-                  </button>
-                </li>
-              </ul>
-              <div class="menu-catalog__link-box">
-                <a class="menu-catalog__link btn" href="shop.html">За покупками</a>
-              </div>
+            <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-3.webp" alt="Цветной дым">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Цветной дым
+              </a>
+              <span class="menu-catalog__price price">145 лей</span>
             </div>
-          </div>
+            <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-4.webp" alt="Red Devil">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Red Devil
+              </a>
+              <span class="menu-catalog__price price">256 лей</span>
+            </div>
+            <button class="menu-catalog__delete menu-catalog__delete--heart" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+        </ul>
+        <div class="menu-catalog__link-box">
+          <a class="menu-catalog__link btn" href="shop.html">За покупками</a>
         </div>
       </div>
-      <div class="menu__categories">
-        <div class="container">
-          <ul class="menu-categories">
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Салюты</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Миномёты</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Римские свечи</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Ракеты</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Фонтаны</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Цветной дым</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Хлопушки</a>
-            </li>
-            <li class="menu-categories__item">
-              <a class="menu-categories__link link-line" href="shop.html">Разное</a>
-            </li>
-          </ul>
+    </div>
+    <div class="menu-catalog menu-catalog--basket">
+      <button class="menu-button menu-catalog__btn menu-catalog__btn-basket" type="button">
+        <span class="sr-only">закрыть меню</span>
+      </button>
+      <span class="menu-catalog__name">
+        Корзина
+      </span>
+      <div class="menu-catalog__empty off">
+        <img class="menu-catalog__empty-img" src="images/icons/basket-empty.svg" alt="пустая корзина">
+        <p class="menu-catalog__text">
+          Твоя корзина пуста, но это никогда
+          не поздно исправить:)
+        </p>
+        <a class="menu-catalog__next btn" href="shop.html">
+          За покупками
+        </a>
+      </div>
+      <div class="menu-catalog__full on">
+        <ul class="menu-catalog__products">
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-1.webp" alt="Absolute Zero">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Absolute Zero
+              </a>
+              <span class="menu-catalog__price price">1978 лей</span>
+              <div class="input-field" min="" max="" step="1" value="0">
+                <button class="input-field__button minus" type="button">
+                  <span class="sr-only">уменьшить количество товара</span>
+                </button>
+                <div class="input-field__number-value">
+                  <span class="input-field__number">5</span>
+                </div>
+                <button class="input-field__button plus" type="button">
+                  <span class="sr-only">увеличить количество товара</span>
+                </button>
+              </div>
+            </div>
+            <button class="menu-catalog__delete" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-2.webp" alt="Angry Tiger">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Angry Tiger
+              </a>
+              <span class="menu-catalog__price price">324 лей</span>
+              <div class="input-field" min="" max="" step="1" value="0">
+                <button class="input-field__button minus" type="button">
+                  <span class="sr-only">уменьшить количество товара</span>
+                </button>
+                <div class="input-field__number-value">
+                  <span class="input-field__number">3</span>
+                </div>
+                <button class="input-field__button plus" type="button">
+                  <span class="sr-only">увеличить количество товара</span>
+                </button>
+              </div>
+            </div>
+            <button class="menu-catalog__delete" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-3.webp" alt="Цветной дым">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Цветной дым
+              </a>
+              <span class="menu-catalog__price price">145 лей</span>
+              <div class="input-field" min="" max="" step="1" value="0">
+                <button class="input-field__button minus" type="button">
+                  <span class="sr-only">уменьшить количество товара</span>
+                </button>
+                <div class="input-field__number-value">
+                  <span class="input-field__number">1</span>
+                </div>
+                <button class="input-field__button plus" type="button">
+                  <span class="sr-only">увеличить количество товара</span>
+                </button>
+              </div>
+            </div>
+            <button class="menu-catalog__delete" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+          <li class="menu-catalog__product">
+            <a class="menu-catalog__img-link" href="#">
+              <img class="menu-catalog__img" src="images/products/product-4.webp" alt="Red Devil">
+            </a>
+            <div class="menu-catalog__info">
+              <a class="menu-catalog__product-name" href="#">
+                Red Devil
+              </a>
+              <span class="menu-catalog__price price">256 лей</span>
+              <div class="input-field" min="" max="" step="1" value="0">
+                <button class="input-field__button minus" type="button">
+                  <span class="sr-only">уменьшить количество товара</span>
+                </button>
+                <div class="input-field__number-value">
+                  <span class="input-field__number">7</span>
+                </div>
+                <button class="input-field__button plus" type="button">
+                  <span class="sr-only">увеличить количество товара</span>
+                </button>
+              </div>
+            </div>
+            <button class="menu-catalog__delete" type="button">
+              <span class="sr-only">удалить товар</span>
+            </button>
+          </li>
+        </ul>
+        <p class="menu-catalog__cost">
+          <span class="menu-catalog__cost-name">Сумма заказа:</span>
+          <span class="menu-catalog__value">123 лей</span>
+        </p>
+        <div class="menu-catalog__link-box">
+          <a class="menu-catalog__link btn" href="order.html">Оформить заказ</a>
         </div>
       </div>
-    </nav>
+    </div>
+    <div class="profile-menu">
+      <button class="profile-menu__close" type="button">
+        <span class="sr-only">закрыть меню</span>
+      </button>
+      <div class="profile-menu__auth-panel off">
+        <ul class="profile-menu__items tabs">
+          <li class="profile-menu__item">
+            <a class="profile-menu__link tab tab--active link" href="#profile-tab-1">Регистрация</a>
+          </li>
+          <li class="profile-menu__item">
+            <a class="profile-menu__link tab link" href="#profile-tab-2">Вход</a>
+          </li>
+        </ul>
+        <ul class="tabs-container profile-menu__content">
+          <li id="profile-tab-1" class="tabs-content profile-menu__elem tabs-content--active">
+            <form class="form" action="#">
+              <label class="form__label">
+                <span class="form__label-text">
+                  Имя пользователя или адрес электронной почты
+                </span>
+                <input class="form__input" type="text" required>
+              </label>
+              <label class="form__label">
+                <span class="form__label-text">
+                  Пароль
+                </span>
+                <input class="form__input" type="password" required>
+              </label>
+              <p class="profile-menu__text">
+                Пароль будет отправлен на ваш адрес электронной почты.
+              </p>
+              <p class="profile-menu__text">
+                Ваши персональные данные будут использоваться для поддержки вашего взаимодействия с данным
+                веб-сайтом,
+                для управления
+                доступом к вашей учетной записи и для других целей, описанных в нашей политике конфиденциальности.
+              </p>
+              <label class="form__apply">
+                <div class="form__box">
+                  <input class="form__checkbox-input" type="checkbox">
+                  <span class="form__checkbox"></span>
+                </div>
+                <span class="form__text">Согласен с условиями и положениями</span>
+              </label>
+              <button class="form__btn btn" type="submit">
+                Зарегистрироваться
+              </button>
+            </form>
+          </li>
+          <li id="profile-tab-2" class="tabs-content profile-menu__elem">
+            <form class="form" action="#">
+              <label class="form__label">
+                <span class="form__label-text">
+                  Имя пользователя или адрес электронной почты
+                </span>
+                <input class="form__input" type="text" required>
+              </label>
+              <label class="form__label">
+                <span class="form__label-text">
+                  Пароль
+                </span>
+                <input class="form__input" type="password" required>
+              </label>
+              <label class="form__apply">
+                <div class="form__box">
+                  <input class="form__checkbox-input" type="checkbox">
+                  <span class="form__checkbox"></span>
+                </div>
+                <span class="form__text">Запомнить</span>
+              </label>
+              <button class="form__btn btn" type="submit">
+                Войти
+              </button>
+              <a class="profile-menu__lost" href="#">Забыли пароль?</a>
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="profile-menu__user on">
+        <div class="profile-menu__user-box">
+          <div class="profile-menu__img-box">
+            <img class="profile-menu__img" src="images/icons/user-img.webp" alt="пользователь">
+          </div>
+        </div>
+        <span class="profile-menu__username">
+          Vladick Mustang
+        </span>
+        <strong class="profile-menu__title">
+          Общая информация:
+        </strong>
+        <dl class="profile-menu__list">
+          <div class="profile-menu__list-item profile-menu__list-item--phone">
+            <dt>Номер телефона:</dt>
+            <dd>+37363056098</dd>
+          </div>
+          <div class="profile-menu__list-item profile-menu__list-item--email">
+            <dt>E-mail:</dt>
+            <dd>info@maxsem.ua</dd>
+          </div>
+          <div class="profile-menu__list-item">
+            <dt>Товаров в корзине:</dt>
+            <dd>4</dd>
+          </div>
+          <div class="profile-menu__list-item">
+            <dt>Товаров в избранном:</dt>
+            <dd>4</dd>
+          </div>
+        </dl>
+        <a class="btn profile-menu__edit" href="#">
+          Редактировать профиль
+        </a>
+        <button class="profile-menu__button" type="button">
+          Выход
+        </button>
+      </div>
+    </div>
   </header>
 
   <main class="main">
@@ -1885,179 +2303,55 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__info">
-          <a class="logo footer__logo" href="index.html">
-            <img class="logo__img" width="165px" height="45px" src="images/logo.webp" alt="логотип">
+          <a class="footer__logo logo" href="index.html">
+            <img class="logo__img" src="images/logo-white.svg" alt="логотип">
           </a>
-          <h2 class="footer__title">
-            Поиск по сайту
-          </h2>
-          <search class="search">
-            <form class="search__form" action="#">
-              <input class="search__input" type="search" placeholder="Поиск">
-              <button class="search__btn footer__btn" type="submit">Искать</button>
-            </form>
-          </search>
+          <p class="footer__descr">
+            Mobit Exim SRL – официальный представитель торговой марки Maxsem в Молдове и Румынии.
+          </p>
+          <a class="footer__email link" href="mailto:info@maxsem.ro">
+            info@maxsem.ro
+          </a>
         </div>
-        <ul class="footer__items">
-          <li class="footer__item">
-            <h3 class="footer__title footer__name">
-              Информация
-            </h3>
-            <ul class="footer__list">
-              <li class="footer__elem">
-                <a class="footer__link link" href="about.html">О компании</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="wholesale.html">Опт</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="contacts.html">Контакты</a>
-              </li>
-            </ul>
-          </li>
-          <li class="footer__item">
-            <h3 class="footer__title footer__name">
-              Категории
-            </h3>
-            <ul class="footer__list">
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Салюты</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Миномёты</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Римские свечи</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Ракеты</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Фонтаны</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Хлопушки</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Разное</a>
-              </li>
-              <li class="footer__elem">
-                <a class="footer__link link" href="shop.html">Цветной дым</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="social footer__social">
-          <li class="social__item">
-            <a class="social__link" href="https://www.instagram.com/artificiimaxsem.md/" target="_blank"
-              rel="noopener noreferrer">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_1)">
-                  <path
-                    d="M15.0046 7.29749C10.7509 7.29749 7.30713 10.745 7.30713 14.995C7.30713 19.2487 10.7546 22.6925 15.0046 22.6925C19.2584 22.6925 22.7021 19.245 22.7021 14.995C22.7021 10.7412 19.2546 7.29749 15.0046 7.29749ZM15.0046 19.9912C12.2434 19.9912 10.0084 17.755 10.0084 14.995C10.0084 12.235 12.2446 9.99874 15.0046 9.99874C17.7646 9.99874 20.0009 12.235 20.0009 14.995C20.0021 17.755 17.7659 19.9912 15.0046 19.9912Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M21.1848 0.095454C18.4248 -0.033296 11.5885 -0.027046 8.82605 0.095454C6.39855 0.209204 4.2573 0.795454 2.53105 2.5217C-0.353954 5.4067 0.0147958 9.29421 0.0147958 14.9955C0.0147958 20.8305 -0.310204 24.628 2.53105 27.4692C5.4273 30.3642 9.37104 29.9855 15.0048 29.9855C20.7848 29.9855 22.7798 29.9892 24.8235 29.198C27.6023 28.1192 29.6998 25.6355 29.9048 21.1742C30.0348 18.413 30.0273 11.578 29.9048 8.81546C29.6573 3.5492 26.831 0.355454 21.1848 0.095454ZM25.5535 25.5605C23.6623 27.4517 21.0385 27.283 14.9685 27.283C8.71854 27.283 6.2123 27.3755 4.38355 25.5417C2.2773 23.4455 2.65855 20.0792 2.65855 14.9755C2.65855 8.0692 1.9498 3.09545 8.88105 2.74045C10.4735 2.6842 10.9423 2.66545 14.951 2.66545L15.0073 2.70295C21.6685 2.70295 26.8948 2.00545 27.2085 8.93545C27.2798 10.5167 27.296 10.9917 27.296 14.9942C27.2948 21.1717 27.4123 23.693 25.5535 25.5605Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M23.0077 8.79245C24.0012 8.79245 24.8065 7.98712 24.8065 6.9937C24.8065 6.00027 24.0012 5.19495 23.0077 5.19495C22.0143 5.19495 21.209 6.00027 21.209 6.9937C21.209 7.98712 22.0143 8.79245 23.0077 8.79245Z"
-                    fill="#2F3035" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_1">
-                    <rect width="30" height="30" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="sr-only">перейти в instagram</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="https://vk.com/public58795950" target="_blank" rel="noopener noreferrer">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M24.8938 16.285C24.4088 15.6725 24.5475 15.4 24.8938 14.8525C24.9 14.8462 28.9037 9.31375 29.3162 7.4375L29.3188 7.43625C29.5238 6.7525 29.3188 6.25 28.3275 6.25H25.0475C24.2125 6.25 23.8275 6.68125 23.6213 7.16375C23.6213 7.16375 21.9513 11.1613 19.5887 13.7525C18.8263 14.5012 18.4738 14.7413 18.0575 14.7413C17.8525 14.7413 17.5338 14.5013 17.5338 13.8175V7.43625C17.5338 6.61625 17.3 6.25 16.6087 6.25H11.4513C10.9275 6.25 10.6163 6.6325 10.6163 6.98875C10.6163 7.76625 11.7975 7.945 11.92 10.1325V14.8787C11.92 15.9187 11.7312 16.11 11.3125 16.11C10.1975 16.11 7.49125 12.0962 5.8875 7.5025C5.56375 6.61125 5.2475 6.25125 4.40625 6.25125H1.125C0.18875 6.25125 0 6.6825 0 7.165C0 8.0175 1.115 12.2562 5.185 17.8562C7.8975 21.6788 11.7175 23.75 15.1925 23.75C17.2812 23.75 17.5363 23.29 17.5363 22.4988C17.5363 18.8463 17.3475 18.5012 18.3937 18.5012C18.8787 18.5012 19.7137 18.7413 21.6637 20.585C23.8925 22.7712 24.2588 23.75 25.5063 23.75H28.7862C29.7212 23.75 30.195 23.29 29.9225 22.3825C29.2987 20.4738 25.0838 16.5475 24.8938 16.285Z"
-                  fill="#2F3035" />
-              </svg>
-              <span class="sr-only">перейти в vk</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="https://www.facebook.com/MaxsemUkraine/" target="_blank"
-              rel="noopener noreferrer">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_7)">
-                  <path
-                    d="M17.4188 29.8048C17.2938 29.8252 17.1684 29.8439 17.0425 29.8611C17.1684 29.8439 17.2938 29.8252 17.4188 29.8048Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M17.7188 29.7535C17.659 29.7645 17.5993 29.7746 17.5396 29.7849C17.5993 29.7746 17.659 29.7645 17.7188 29.7535Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M16.7072 29.9027C16.5609 29.9192 16.4137 29.9338 16.2661 29.9462C16.4137 29.9338 16.5609 29.9192 16.7072 29.9027Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M16.9952 29.8674C16.9249 29.8768 16.8542 29.8855 16.7837 29.8938C16.8542 29.8855 16.9249 29.8768 16.9952 29.8674Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M18.1271 29.6725C18.0745 29.6837 18.0216 29.6949 17.9688 29.7057C18.0216 29.6949 18.0745 29.6837 18.1271 29.6725Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M19.1404 29.4207C19.0978 29.4328 19.0553 29.4442 19.0127 29.4561C19.0553 29.4442 19.0978 29.4328 19.1404 29.4207Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M18.834 29.5045C18.7878 29.5166 18.7413 29.529 18.6948 29.5407C18.7413 29.529 18.7878 29.5169 18.834 29.5045Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M18.433 29.6047C18.384 29.6162 18.3346 29.6269 18.2852 29.6379C18.3346 29.6269 18.384 29.6162 18.433 29.6047Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M16.2615 29.9467C16.1826 29.9533 16.1036 29.9592 16.0244 29.9645C16.1036 29.9592 16.1826 29.9533 16.2615 29.9467Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M30 15C30 6.717 23.283 0 15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C15.0881 30 15.1758 29.9982 15.2637 29.9966V18.3197H12.041V14.564H15.2637V11.8002C15.2637 8.59497 17.2204 6.85043 20.0796 6.85043C21.4487 6.85043 22.6257 6.95251 22.9688 6.99806V10.348H20.9972C19.4417 10.348 19.1405 11.0873 19.1405 12.1719V14.564H22.8598L22.375 18.3197H19.1405V29.4205C25.4102 27.6231 30 21.8468 30 15Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M15.9911 29.9666C15.835 29.9766 15.6782 29.9846 15.521 29.9899C15.6782 29.9846 15.835 29.9766 15.9911 29.9666Z"
-                    fill="#2F3035" />
-                  <path
-                    d="M15.5127 29.9904C15.4298 29.9931 15.3468 29.9952 15.2637 29.9965C15.3468 29.9952 15.4298 29.9931 15.5127 29.9904Z"
-                    fill="#2F3035" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_7">
-                    <rect width="30" height="30" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="sr-only">перейти в facebook</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link" href="https://www.youtube.com/user/MaxsemFireworks" target="_blank"
-              rel="noopener noreferrer">
-              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_58_20)">
-                  <path d="M13.1318 17.8102L18.0111 15L13.1318 12.1898V17.8102Z" fill="#2F3035" />
-                  <path
-                    d="M15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C23.283 30 30 23.283 30 15C30 6.717 23.283 0 15 0ZM24.3727 15.0153C24.3727 15.0153 24.3727 18.0574 23.9868 19.5243C23.7705 20.3272 23.1374 20.9603 22.3345 21.1764C20.8676 21.5625 15 21.5625 15 21.5625C15 21.5625 9.14772 21.5625 7.66548 21.161C6.86256 20.945 6.22948 20.3117 6.01318 19.5087C5.62706 18.0574 5.62706 15 5.62706 15C5.62706 15 5.62706 11.9582 6.01318 10.4913C6.22925 9.68834 6.8779 9.03969 7.66548 8.82362C9.13239 8.4375 15 8.4375 15 8.4375C15 8.4375 20.8676 8.4375 22.3345 8.83896C23.1374 9.05502 23.7705 9.68834 23.9868 10.4913C24.3883 11.9582 24.3727 15.0153 24.3727 15.0153Z"
-                    fill="#2F3035" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_58_20">
-                    <rect width="30" height="30" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-              <span class="sr-only">перейти в youtube</span>
-            </a>
-          </li>
-        </ul>
+        <div class="box footer__box">
+          <a class="box__phone footer__phone footer__phone link" href="tel:+37379957152">
+            (+373) 79957152
+          </a>
+          <p class="box__text">
+            График работы офиса с 10:00 до 18:00 с понедельника по четверг и в пятницу с 10:00 до 17:00
+          </p>
+          <button class="box__phone-btn footer__btn btn-default">
+            Заказать звонок
+          </button>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav-top">
+            <li class="footer__item">
+              <a class="footer__link link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link link" href="safety-regulations.html">Правила безопасности</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link link" href="#">Розничные магазины</a>
+            </li>
+          </ul>
+          <div class="footer__content"><a class="footer__link footer__nav-linkage link" href="shop.html">Пиротехническая
+              продукция</a></div>
+        </nav>
       </div>
       <div class="footer__bottom">
-        <a class="footer__linkage link" href="safety-regulations.html">
-          Правила безопасности
-        </a>
+        <p class="footer__copy">
+          2024 © Maxsem — интернет-магазин фейерверков
+        </p>
+        <ul class="footer__list">
+          <li class="footer__comp">
+            <a class="footer__linnkage" href="#">Обработка персональных данных</a>
+          </li>
+          <li class="footer__comp">
+            <a class="footer__linnkage" href="#">Публичная оферта</a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>

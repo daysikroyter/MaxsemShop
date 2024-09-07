@@ -1,27 +1,60 @@
 $(function () {
   $('.menu__btn').on('click', function () {
-    $('.menu-burger').addClass('menu-burger--active');
-    $('body').addClass('lock');
+    $('.menu-burger').toggleClass('menu-burger--active');
+    $('.menu__btn').toggleClass('menu__btn--active');
+    $('body').toggleClass('locked');
   });
 
-  $('.menu-burger__btn').on('click', function () {
+  $('.box__phone-btn').on('click', function () {
+    $('.phone-popup').addClass('phone-popup--active');
+    $('body').addClass('lock');
     $('.menu-burger').removeClass('menu-burger--active');
-    $('body').removeClass('lock');
+    $('.menu__btn').removeClass('menu__btn--active');
+    $('.header').removeClass('locked');
+  });
+
+  $('.search__input').on('focus', function () {
+    $('body').addClass('locked');
+    $('.menu-burger').removeClass('menu-burger--active');
+    $('.menu__btn').removeClass('menu__btn--active');
+
+    if ($('.menu__categories-items').hasClass('menu__categories-items--active')) {
+      $('.menu__categories-items').slideToggle();
+      $('.menu__categories-items').removeClass('menu__categories-items--active');
+    };
+
+    if ($('.menu__filters-items').hasClass('menu__filters-items--active')) {
+      $('.menu__filters-items').slideToggle();
+      $('.menu__filters-items').removeClass('menu__filters-items--active');
+    };
+  });
+
+  $('.search__input').on('blur', function () {
+    $('body').removeClass('locked');
   });
 
   $('.user-menu__btn--profile').on('click', function () {
     $('.profile-menu').addClass('profile-menu--active');
     $('body').addClass('lock');
+    $('.menu-burger').removeClass('menu-burger--active');
+    $('.menu__btn').removeClass('menu__btn--active');
+    $('.header').removeClass('locked');
   });
 
   $('.user-menu__btn--basket').on('click', function () {
     $('.menu-catalog--basket').addClass('menu-catalog--basket-active');
     $('body').addClass('lock');
+    $('.menu-burger').removeClass('menu-burger--active');
+    $('.menu__btn').removeClass('menu__btn--active');
+    $('.header').removeClass('locked');
   });
 
   $('.user-menu__btn--heart').on('click', function () {
     $('.menu-catalog--heart').addClass('menu-catalog--heart-active');
     $('body').addClass('lock');
+    $('.menu-burger').removeClass('menu-burger--active');
+    $('.menu__btn').removeClass('menu__btn--active');
+    $('.header').removeClass('locked');
   });
 
   $('.profile-menu__close').on('click', function () {
@@ -39,22 +72,42 @@ $(function () {
     $('body').removeClass('lock');
   });
 
+  $('.phone-popup__close').on('click', function () {
+    $('.phone-popup').removeClass('phone-popup--active');
+    $('body').removeClass('lock');
+  });
+
   $(document).on('click', function (event) {
     if ($(event.target).hasClass('lock')) {
-      $('.menu-burger').removeClass('menu-burger--active');
       $('.profile-menu').removeClass('profile-menu--active');
       $('.menu-catalog--basket').removeClass('menu-catalog--basket-active');
       $('.menu-catalog--heart').removeClass('menu-catalog--heart-active');
-      $('.shop__filters').removeClass('shop__filters--active');
+      $('.phone-popup').removeClass('phone-popup--active');
+      $('.menu-responsive').removeClass('menu-responsive--active');
       $('body').removeClass('lock');
     }
   });
 
+  $(document).on('click', function (event) {
+    if ($(event.target).hasClass('locked')) {
+      $('.menu-burger').removeClass('menu-burger--active');
+      $('body').removeClass('locked');
+      $('.menu__btn').removeClass('menu__btn--active');
+    }
+  });
+
   $(window).on('resize', function () {
-    if ($(window).width() >= 769) {
+    if ($(window).width() >= 993) {
+      if ($('.menu-responsive').hasClass('menu-responsive--active')) {
+        $('.menu-responsive').removeClass('menu-responsive--active');
+        $('body').removeClass('lock');
+      }
+    }
+    if ($(window).width() <= 992) {
       if ($('.menu-burger').hasClass('menu-burger--active')) {
         $('.menu-burger').removeClass('menu-burger--active');
-        $('body').removeClass('lock');
+        $('.menu__btn').removeClass('menu__btn--active');
+        $('body').removeClass('locked');
       }
     }
   });
@@ -135,5 +188,53 @@ $(function () {
 
   $('.link--disabled').on('click', function (e) {
     e.preventDefault();
+  });
+
+  $('.shop__title-dropdown').on('click', function () {
+    $(this).next('.shop__dropdown-list').slideToggle();
+    $(this).toggleClass('shop__title-dropdown--active')
+  });
+
+  $('.user-menu__btn--search').on('click', function () {
+    $('.menu__content-search').slideToggle();
+    $('.header').toggleClass('header--active');
+  });
+
+  $('.menu__content-btn--catalog').on('click', function () {
+    $('.menu__categories-items').slideToggle();
+    $('.menu__categories-items').toggleClass('menu__categories-items--active');
+
+    if ($('.menu__filters-items').hasClass('menu__filters-items--active')) {
+      $('.menu__filters-items').slideToggle();
+      $('.menu__filters-items').removeClass('menu__filters-items--active');
+    };
+  });
+
+  $('.menu__content-btn--filter').on('click', function () {
+    $('.menu__filters-items').slideToggle();
+    $('.menu__filters-items').toggleClass('menu__filters-items--active');
+
+    if ($('.menu__categories-items').hasClass('menu__categories-items--active')) {
+      $('.menu__categories-items').slideToggle();
+      $('.menu__categories-items').removeClass('menu__categories-items--active');
+    };
+  })
+
+  $('.menu__btn-responsive').on('click', function () {
+    $('.menu-responsive').addClass('menu-responsive--active');
+    $('body').addClass('lock');
+  });
+
+  $('.menu-responsive__close').on('click', function () {
+    $('.menu-responsive').removeClass('menu-responsive--active');
+    $('body').removeClass('lock');
+  });
+
+  $('.menu-responsive__btn').on('click', function () {
+    $('.menu-responsive').removeClass('menu-responsive--active');
+  });
+
+  $('.menu-responsive__popup').on('click', function () {
+    $('.menu-responsive').removeClass('menu-responsive--active');
   });
 });

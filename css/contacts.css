@@ -9,6 +9,8 @@
 
 .contacts__tab {
   padding: 0 0 10px;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .contacts__tab.tab--active::before {
