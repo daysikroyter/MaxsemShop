@@ -149,9 +149,9 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: #333;
-  background-color: #fff;
   display: flex;
   flex-direction: column;
+  background-color: #fff;
   overflow-x: hidden;
   position: relative;
 }
@@ -169,7 +169,7 @@ body::after {
 
 body::after {
   position: absolute;
-  height: 100%;
+  /* height: 100%; */
   top: 160px;
 }
 
@@ -999,9 +999,9 @@ input[type=search]::-webkit-search-submit-button {
   width: 100%;
   height: 60px;
   margin-top: 4px;
-  padding: 0 15px;
-  border: 2px solid #1F1F1F;
-  border-radius: 4px;
+  padding: 15px;
+  border: 1px solid #EBEBEB;
+  border-radius: 8px;
   transition: border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -1015,7 +1015,9 @@ input[type=search]::-webkit-search-submit-button {
 
 .label {
   display: block;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.33;
   color: #C8A06C;
   margin-bottom: 30px;
 }
@@ -1025,7 +1027,7 @@ input[type=search]::-webkit-search-submit-button {
 }
 
 .page-form__form {
-  max-width: 750px;
+  max-width: 730px;
   display: flex;
   flex-direction: column;
 }

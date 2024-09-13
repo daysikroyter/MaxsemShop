@@ -840,7 +840,7 @@
 }
 
 .profile-menu__edit {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .profile-menu__button {
@@ -869,6 +869,22 @@
 .menu__categories-items,
 .menu-responsive,
 .menu__btn-responsive {
+  display: none;
+}
+
+.profile-menu__history-icon img{
+  margin-top: -3px;
+}
+
+.profile-menu__history.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.profile-menu__history.btn:active .profile-menu__history-icon img{
   display: none;
 }
 

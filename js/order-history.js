@@ -112,7 +112,6 @@ $(function () {
     }
   });
 
-
   $('.tab').on('click', function (e) {
     e.preventDefault();
 
@@ -209,18 +208,24 @@ $(function () {
     $('.menu-responsive').removeClass('menu-responsive--active');
   });
 
-  $('.tab').on('click', function (e) {
-    e.preventDefault();
+  $('.order-history__items').on('click', function () {
+    var $parentItem = $(this).parent();
 
-    const $tabs = $(this).closest('.tabs');
-    const index = $(this).parent().index();
+    if ($parentItem.hasClass('order-history__component--active')) {
+      $parentItem.removeClass('order-history__component--active');
+    } else {
+      $('.order-history__component').removeClass('order-history__component--active');
+      $parentItem.addClass('order-history__component--active');
+    }
+  });
 
-    $tabs.find('.tab--active').removeClass('tab--active');
-    $(this).addClass('tab--active');
+  $('.order-history__info').click(function () {
+    var $button = $(this).find('.order-history__btn');
 
-    const $contents = $tabs.next('.tabs-container').find('.tabs-content');
-    $contents.removeClass('tabs-content--active');
-    $contents.eq(index).addClass('tabs-content--active');
+    $button.removeClass('rotate');
+
+    void $button[0].offsetWidth;
+    $button.addClass('rotate');
   });
 });
 
@@ -280,11 +285,3 @@ document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
 
   updateProgress();
 });
-
-
-
-
-
-
-
-

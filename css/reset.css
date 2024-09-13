@@ -60,5 +60,6 @@ textarea {
 }
 
 button {
+  color: inherit;
   cursor: pointer;
 }
