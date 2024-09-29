@@ -885,8 +885,8 @@ input[type=search]::-webkit-search-submit-button {
 }
 
 .btn:active {
-  background-color: transparent;
-  color: #2F3035;
+  background-color: rgba(47, 48, 53, .9);
+  color: #fff;
   box-shadow: 3px 3px 20px 0px rgba(50, 50, 50, 0.25) inset;
 }
 

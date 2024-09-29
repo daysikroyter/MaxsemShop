@@ -198,16 +198,27 @@
 
 @media (max-width: 780px) {
 
+  .order-history__elem {
+    overflow-x: auto;
+    padding: 5px 10px 15px 5px;
+  }
+
+  .order-history__items-box {
+    white-space: nowrap;
+  }
+
   .order-history__items,
   .order-history__table {
-    overflow-x: auto;
     white-space: nowrap;
-    padding: 5px;
+    min-width: 980px;
     grid-template-columns: repeat(7, 140px);
   }
 
+  .order-history__components {
+    min-width: 980px;
+  }
+
   .order-history__product {
-    flex-wrap: wrap;
     gap: 10px 0;
   }
 }

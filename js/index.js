@@ -220,7 +220,7 @@ $(function () {
       $('.menu__categories-items').slideToggle();
       $('.menu__categories-items').removeClass('menu__categories-items--active');
     };
-  })
+  });
 
   $('.menu__btn-responsive').on('click', function () {
     $('.menu-responsive').addClass('menu-responsive--active');
